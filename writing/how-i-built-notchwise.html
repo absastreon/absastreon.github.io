@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How I built NotchWise · ABS Astreon</title>
+  <meta name="description" content="Why the notch turned out to be the right place for a flashcard app, and the eight-second rule that shaped the rest of the design." />
+  <meta name="theme-color" content="#f1ebdd" />
+
+  <meta property="og:title" content="How I built NotchWise · ABS Astreon" />
+  <meta property="og:description" content="Build notes on a flashcard app that lives in the MacBook notch." />
+  <meta property="og:type" content="article" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+  <header class="shell site-header">
+    <div class="wordmark reveal d1">
+      <a href="../index.html">ABS <span>·</span> ASTREON</a>
+    </div>
+    <nav class="site-nav reveal d2">
+      <a href="../index.html#works">Works</a>
+      <a href="../index.html#workshop">Workshop</a>
+      <a href="index.html">Writing</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="shell-narrow">
+    <a href="index.html" class="back-link reveal d1">
+      <span class="arrow">←</span> Back to writing
+    </a>
+
+    <article class="writing-article">
+      <header class="writing-article-header reveal d2">
+        <p class="writing-article-kicker">
+          <span class="num">01</span>
+          <span class="sep"></span>
+          <span>Build notes</span>
+          <span class="sep"></span>
+          <span>NotchWise</span>
+        </p>
+        <h1 class="writing-article-title">How I built Notch<em>Wise</em></h1>
+        <p class="writing-article-dateline">
+          <span>November · MMXXVI</span>
+          <span class="sep"></span>
+          <span>5 min read</span>
+          <span class="sep"></span>
+          <span>by ABS Astreon</span>
+        </p>
+      </header>
+
+      <div class="writing-prose reveal d3">
+        <p>
+          I've been using Anki for years and it was great for learning things, except for one problem. Every time I opened it to do a quick session, I'd lose twenty minutes to the app itself. The cards, yes, but also the settings, the deck browser, the urge to reorganise my tags. By the time I closed it, I'd forgotten what I was working on before.
+        </p>
+        <p>
+          That's the loop I wanted to break. Not to replace Anki, which is genuinely good, but to make studying something that happened around my work instead of pulling me out of it.
+        </p>
+
+        <h2>The notch turned out to be the right place</h2>
+        <p>
+          I tried a few things first. A menu bar app felt too hidden. A floating window felt too pushy. Keyboard shortcuts were fine but I kept forgetting them. Then one evening I was looking at the notch on my MacBook Pro, which had become a place where nothing useful lived, and it clicked. The notch is already in my peripheral vision. It's tolerated rather than attended to. If a card could quietly appear there, I wouldn't have to decide to go and look for it. It would just be there when my eyes drifted up.
+        </p>
+        <p>
+          For older Macs that don't have a notch, NotchWise draws a thin widget in the same spot. Same muscle memory, same rhythm, no one left out.
+        </p>
+
+        <h2>Eight seconds became the unit</h2>
+        <p>
+          Once the position was settled, the rest of the design came out of one constraint. The whole interaction needed to be fast enough that I could do it between paragraphs of real work. A card appears. I look up. I hover to flip it. I press <code>1</code>, <code>2</code>, <code>3</code>, or <code>4</code> to rate it. It's gone. Total time, about eight seconds. If it ever took longer than that, I'd stop doing it.
+        </p>
+        <p>
+          That constraint shaped everything. The card layout is as spare as I could make it without losing information. The rating keys sit close to the home row so the motion stays small. The scheduler doesn't show me a card during a meeting or a focused coding block, because an interruption at the wrong moment is worse than no interruption at all.
+        </p>
+
+        <h2>The boring parts mattered most</h2>
+        <p>
+          A good chunk of the work went into things nobody sees. NotchWise runs entirely offline. No accounts, no cloud sync, no telemetry. Your data sits in a SQLite file on your Mac and that's it. It imports your existing Anki decks, both <code>.apkg</code> files and live <code>AnkiConnect</code> sessions, so you can switch without losing a single card. You can pick between <code>SM-2</code>, which Anki uses by default, and <code>FSRS</code>, the newer scheduler that's better at predicting what you'll actually remember.
+        </p>
+        <p>
+          The auto-hide logic was the thing I got most wrong the first few times. I shipped a build where cards kept appearing during screen shares. That afternoon I rewrote it to watch for ScreenCaptureKit sessions, Focus modes, and full-screen presentations. A flashcard about anatomy showing up in a Zoom call is the kind of moment you don't come back from.
+        </p>
+
+        <h2>What's next</h2>
+        <p>
+          I'm working on a version that makes cards from whatever text you drag in, using Apple's NaturalLanguage framework so nothing leaves the machine. It'll suggest a front and back from a paragraph, or generate cloze deletions. Still local, still offline, still something you can use while doing something else.
+        </p>
+        <p>
+          NotchWise is on the Mac App Store, and there's a demo you can try in a browser. If you've already got an Anki library, it takes about a minute to get going.
+        </p>
+      </div>
+
+      <p class="writing-byline reveal d3">
+        <em>ABS Astreon</em>
+        <span class="sep"></span>
+        <span>London · MMXXVI</span>
+      </p>
+
+      <a class="writing-backlink reveal d3" href="../projects/notchwise.html">
+        <span class="meta">
+          <span class="label">Read the project record</span>
+          <span class="title">Notch<em>Wise</em> · N° 01</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </article>
+  </main>
+
+  <div class="footer-rule">
+    <span>© MMXXVI · ABS Astreon</span>
+    <span>Made in London · v1.1</span>
+  </div>
+</body>
+</html>
