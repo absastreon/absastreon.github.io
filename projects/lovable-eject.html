@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lovable-Eject — ABS Astreon</title>
+  <meta name="description" content="Lovable-Eject: a tiny CLI that exports Lovable projects so you can self-host anywhere." />
+  <meta name="theme-color" content="#f1ebdd" />
+
+  <meta property="og:title" content="Lovable-Eject — ABS Astreon" />
+  <meta property="og:description" content="Get off Lovable hosting. Self-host anywhere." />
+  <meta property="og:type" content="article" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+  <header class="shell site-header">
+    <div class="wordmark reveal d1">
+      <a href="../index.html">ABS <span>·</span> ASTREON</a>
+    </div>
+    <nav class="site-nav reveal d2">
+      <a href="../index.html#works">Works</a>
+      <a href="../index.html#workshop">Workshop</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="shell">
+    <a href="../index.html" class="back-link reveal d1">
+      <span class="arrow">←</span> Back to index
+    </a>
+
+    <section class="detail-header reveal d2">
+      <p class="detail-meta">
+        <span class="num">04</span>
+        <span class="sep"></span>
+        <span>MMXXVI</span>
+        <span class="sep"></span>
+        <span class="live">Live · OSS</span>
+        <span class="sep"></span>
+        <span>CLI · Free</span>
+      </p>
+      <h1 class="detail-title">Lovable-<em>Eject</em></h1>
+      <p class="detail-tagline">Out of lock-in. A one-command escape hatch for Lovable projects.</p>
+    </section>
+
+    <div class="detail-cover reveal d3">
+      <img src="../assets/covers/lovable-eject.svg" alt="Lovable-Eject cover plate" />
+    </div>
+
+    <section class="detail-body">
+      <div>
+        <p class="detail-section-label">The work</p>
+      </div>
+      <div class="detail-prose">
+        <p>
+          Lovable is a lovely way to prototype. But the moment a project
+          grows past a weekend hack — real users, a custom domain, a need for
+          granular control — the hosting lock-in starts to chafe. Exporting
+          the code gives you files, but not a cleanly deployable project.
+          You end up hand-editing configs for an afternoon.
+        </p>
+        <p>
+          Lovable-Eject is the escape hatch. One command takes a Lovable
+          project and produces a clean, dependency-aware export ready to
+          deploy to Vercel, Netlify, a VPS, or anywhere that runs Node. No
+          leftover Lovable-specific files, no broken imports, no surprises.
+          Free, open source, does one thing well.
+        </p>
+        <p>
+          Built because I needed it, released because other people probably
+          do too.
+        </p>
+
+        <div class="cli-box">
+          <span>npx lovable-eject</span>
+          <span class="copy-hint">One command</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-body">
+      <div>
+        <p class="detail-section-label">What it does</p>
+      </div>
+      <div>
+        <div class="features">
+          <div class="feature">
+            <span class="feature-num">F.01</span>
+            <div>
+              <h4>Clean export</h4>
+              <p>Strips Lovable-specific config, normalises project structure,
+              and outputs a standard repository you'd expect to find anywhere.</p>
+            </div>
+          </div>
+          <div class="feature">
+            <span class="feature-num">F.02</span>
+            <div>
+              <h4>Host-agnostic output</h4>
+              <p>Works out of the box on Vercel, Netlify, Cloudflare Pages,
+              Railway, or a plain Node server. No vendor coupling.</p>
+            </div>
+          </div>
+          <div class="feature">
+            <span class="feature-num">F.03</span>
+            <div>
+              <h4>Env-var preservation</h4>
+              <p>Keeps your environment configuration intact, with a
+              <code>.env.example</code> generated for collaborators.</p>
+            </div>
+          </div>
+          <div class="feature">
+            <span class="feature-num">F.04</span>
+            <div>
+              <h4>Zero install</h4>
+              <p>Runs via <code>npx</code>. No global install, no config file,
+              no lock-in to another tool. Use it once and forget it.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-body">
+      <div>
+        <p class="detail-section-label">The stack</p>
+      </div>
+      <div>
+        <div class="project-stack" style="gap: 0.6rem;">
+          <span>Node.js</span>
+          <span>CLI</span>
+          <span>npm / npx</span>
+          <span>Vercel</span>
+          <span>Free</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-body">
+      <div>
+        <p class="detail-section-label">Elsewhere</p>
+      </div>
+      <div>
+        <div class="links-grid">
+          <a class="link-card" href="https://lovable-eject.vercel.app" target="_blank" rel="noopener">
+            <span class="glyph">↗</span>
+            <span class="meta">
+              <span class="label">Website</span>
+              <span class="value">lovable-eject.vercel.app</span>
+            </span>
+            <span class="arrow">→</span>
+          </a>
+          <a class="link-card" href="https://github.com/absastreon/lovable-eject" target="_blank" rel="noopener">
+            <span class="glyph">{ }</span>
+            <span class="meta">
+              <span class="label">Source</span>
+              <span class="value">github.com/absastreon</span>
+            </span>
+            <span class="arrow">→</span>
+          </a>
+          <a class="link-card" href="https://www.npmjs.com/package/lovable-eject" target="_blank" rel="noopener">
+            <span class="glyph">◼</span>
+            <span class="meta">
+              <span class="label">Package</span>
+              <span class="value">npmjs.com/lovable-eject</span>
+            </span>
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <a class="next-project" href="notchwise.html">
+      <span class="label">Return to start · N° 01</span>
+      <h3 class="title">Notch<em>Wise</em></h3>
+      <span class="arrow">↻</span>
+    </a>
+  </main>
+
+  <div class="footer-rule">
+    <span>© MMXXVI · ABS Astreon</span>
+    <span>Made in London · v1.1</span>
+  </div>
+</body>
+</html>

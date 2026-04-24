@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ParkMoto — ABS Astreon</title>
+  <meta name="description" content="ParkMoto: free motorcycle parking finder for London. Every bay on one map." />
+  <meta name="theme-color" content="#f1ebdd" />
+
+  <meta property="og:title" content="ParkMoto — ABS Astreon" />
+  <meta property="og:description" content="A free motorcycle parking map for London." />
+  <meta property="og:type" content="article" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+  <header class="shell site-header">
+    <div class="wordmark reveal d1">
+      <a href="../index.html">ABS <span>·</span> ASTREON</a>
+    </div>
+    <nav class="site-nav reveal d2">
+      <a href="../index.html#works">Works</a>
+      <a href="../index.html#workshop">Workshop</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="shell">
+    <a href="../index.html" class="back-link reveal d1">
+      <span class="arrow">←</span> Back to index
+    </a>
+
+    <section class="detail-header reveal d2">
+      <p class="detail-meta">
+        <span class="num">03</span>
+        <span class="sep"></span>
+        <span>MMXXVI</span>
+        <span class="sep"></span>
+        <span class="live">Live · London</span>
+        <span class="sep"></span>
+        <span>Map · PWA</span>
+      </p>
+      <h1 class="detail-title">Park<em>Moto</em></h1>
+      <p class="detail-tagline">A free motorcycle parking map for London — no accounts, no ads.</p>
+    </section>
+
+    <div class="detail-cover reveal d3">
+      <img src="../assets/covers/parkmoto.svg" alt="ParkMoto cover plate" />
+    </div>
+
+    <section class="detail-body">
+      <div>
+        <p class="detail-section-label">The work</p>
+      </div>
+      <div class="detail-prose">
+        <p>
+          London has thousands of motorcycle parking bays — but the data is
+          fragmented across council websites, out of date in TfL tooling, or
+          buried in borough-specific PDFs. As a rider, you end up circling
+          blocks looking for the faded <em>"M/C only"</em> paint, hoping it still
+          applies.
+        </p>
+        <p>
+          ParkMoto puts every bay on one map, with borough-aware fee rules
+          built in, one-tap navigation out to Google Maps or Waze, and a
+          lightweight report flow for missing, removed, or incorrectly-tagged
+          bays. Corrections feed back into OpenStreetMap so the whole
+          ecosystem benefits — not just ParkMoto users.
+        </p>
+        <p>
+          There's no registration, no tracking, and no ads. Location is used
+          once to tag a report, never stored. It's just a map, it's free, and
+          it works.
+        </p>
+      </div>
+    </section>
+
+    <section class="detail-body">
+      <div>
+        <p class="detail-section-label">What it does</p>
+      </div>
+      <div>
+        <div class="features">
+          <div class="feature">
+            <span class="feature-num">F.01</span>
+            <div>
+              <h4>Every London bay, one map</h4>
+              <p>Sourced from OpenStreetMap and enriched with borough-specific
+              fee rules. Filter by free / paid / covered, or surface favourites.</p>
+            </div>
+          </div>
+          <div class="feature">
+            <span class="feature-num">F.02</span>
+            <div>
+              <h4>Report in seconds</h4>
+              <p>Missing bay? Removed? Incorrect fee? Three taps and the
+              correction is queued — and optionally opens straight in the
+              OpenStreetMap editor for riders with an OSM account.</p>
+            </div>
+          </div>
+          <div class="feature">
+            <span class="feature-num">F.03</span>
+            <div>
+              <h4>One-tap navigation</h4>
+              <p>Launch Google Maps or Waze directly to any bay. Designed for
+              use with gloves on, at a red light.</p>
+            </div>
+          </div>
+          <div class="feature">
+            <span class="feature-num">F.04</span>
+            <div>
+              <h4>Installable PWA</h4>
+              <p>Add to home screen, works offline once cached, loads fast on
+              cold-start — behaves like an app without the App Store friction.</p>
+            </div>
+          </div>
+          <div class="feature">
+            <span class="feature-num">F.05</span>
+            <div>
+              <h4>Privacy by default</h4>
+              <p>No accounts. No analytics funnels. Location permission used
+              once per report and never persisted.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-body">
+      <div>
+        <p class="detail-section-label">The stack</p>
+      </div>
+      <div>
+        <div class="project-stack" style="gap: 0.6rem;">
+          <span>JavaScript</span>
+          <span>OpenStreetMap</span>
+          <span>Leaflet</span>
+          <span>Geolocation API</span>
+          <span>Service Worker</span>
+          <span>PWA</span>
+          <span>TfL Data</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-body">
+      <div>
+        <p class="detail-section-label">Elsewhere</p>
+      </div>
+      <div>
+        <div class="links-grid">
+          <a class="link-card" href="https://parkmoto.london" target="_blank" rel="noopener">
+            <span class="glyph">◎</span>
+            <span class="meta">
+              <span class="label">Open the map</span>
+              <span class="value">parkmoto.london</span>
+            </span>
+            <span class="arrow">→</span>
+          </a>
+          <a class="link-card" href="https://www.openstreetmap.org" target="_blank" rel="noopener">
+            <span class="glyph">⊕</span>
+            <span class="meta">
+              <span class="label">Data source</span>
+              <span class="value">Contribute to OSM</span>
+            </span>
+            <span class="arrow">→</span>
+          </a>
+          <a class="link-card" href="https://parkmoto.london/privacy" target="_blank" rel="noopener">
+            <span class="glyph">⎉</span>
+            <span class="meta">
+              <span class="label">Policy</span>
+              <span class="value">Privacy policy</span>
+            </span>
+            <span class="arrow">→</span>
+          </a>
+          <a class="link-card" href="https://parkmoto.london/terms" target="_blank" rel="noopener">
+            <span class="glyph">§</span>
+            <span class="meta">
+              <span class="label">Policy</span>
+              <span class="value">Terms of use</span>
+            </span>
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <a class="next-project" href="lovable-eject.html">
+      <span class="label">N° 04 · Next record</span>
+      <h3 class="title">Lovable-<em>Eject</em></h3>
+      <span class="arrow">→</span>
+    </a>
+  </main>
+
+  <div class="footer-rule">
+    <span>© MMXXVI · ABS Astreon</span>
+    <span>Made in London · v1.1</span>
+  </div>
+</body>
+</html>

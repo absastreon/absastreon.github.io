@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bastion — ABS Astreon</title>
+  <meta name="description" content="Bastion: privacy-first security scanner for AI-era builders. Runs locally via npx." />
+  <meta name="theme-color" content="#f1ebdd" />
+
+  <meta property="og:title" content="Bastion — ABS Astreon" />
+  <meta property="og:description" content="Security for the AI-era builder — local, fast, free to start." />
+  <meta property="og:type" content="article" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+  <header class="shell site-header">
+    <div class="wordmark reveal d1">
+      <a href="../index.html">ABS <span>·</span> ASTREON</a>
+    </div>
+    <nav class="site-nav reveal d2">
+      <a href="../index.html#works">Works</a>
+      <a href="../index.html#workshop">Workshop</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="shell">
+    <a href="../index.html" class="back-link reveal d1">
+      <span class="arrow">←</span> Back to index
+    </a>
+
+    <section class="detail-header reveal d2">
+      <p class="detail-meta">
+        <span class="num">02</span>
+        <span class="sep"></span>
+        <span>MMXXVI</span>
+        <span class="sep"></span>
+        <span class="live">Live · OSS</span>
+        <span class="sep"></span>
+        <span>Node.js · MIT</span>
+      </p>
+      <h1 class="detail-title"><em>Bastion</em></h1>
+      <p class="detail-tagline">Security for the AI-era builder — local, fast, free to start.</p>
+    </section>
+
+    <div class="detail-cover reveal d3">
+      <img src="../assets/covers/bastion.svg" alt="Bastion cover plate" />
+    </div>
+
+    <section class="detail-body">
+      <div>
+        <p class="detail-section-label">The work</p>
+      </div>
+      <div class="detail-prose">
+        <p>
+          Since the rise of AI-assisted code, even experienced engineers
+          routinely ship hardcoded secrets, missing security headers, and
+          unsafe default CORS policies. Stanford's research suggests
+          AI-generated code contains roughly <strong>40% more vulnerabilities</strong>
+          than hand-written equivalents — and enterprise security tooling
+          starts at £300/month, putting basic hygiene out of reach for
+          indie developers and small teams.
+        </p>
+        <p>
+          Bastion is the tool I wished existed: a privacy-first scanner
+          that runs on your machine via <code>npx bastion-scan</code>,
+          checks for the twelve most common security gaps in seconds, and
+          generates AI-ready fix prompts tailored to your exact stack.
+          Paste them into Claude or ChatGPT and ship fixes the same day.
+        </p>
+        <p>
+          Open source under MIT. No accounts, no uploads, no cloud. Self-scans
+          at 100/100, ships with 759 tests, and is distributed with npm
+          provenance. The Pro tier adds extra checks and a dashboard, but
+          the core scanner will always be free.
+        </p>
+
+        <div class="cli-box">
+          <span>npx bastion-scan scan</span>
+          <span class="copy-hint">Try it now</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-body">
+      <div>
+        <p class="detail-section-label">What it checks</p>
+      </div>
+      <div>
+        <div class="features">
+          <div class="feature">
+            <span class="feature-num">C.01</span>
+            <div>
+              <h4>Configuration &amp; secrets</h4>
+              <p><code>.gitignore</code> patterns, <code>.env.example</code> validation,
+              hardcoded API keys (OpenAI, AWS, Stripe, etc.), and sensitive file
+              detection before they hit your repo.</p>
+            </div>
+          </div>
+          <div class="feature">
+            <span class="feature-num">C.02</span>
+            <div>
+              <h4>Security headers &amp; transport</h4>
+              <p>CSP, HSTS, X-Frame-Options, X-Content-Type-Options, SSL cert
+              expiry, TLS version, HTTPS redirects. The stuff browsers expect.</p>
+            </div>
+          </div>
+          <div class="feature">
+            <span class="feature-num">C.03</span>
+            <div>
+              <h4>CORS, rate limiting &amp; auth</h4>
+              <p>Catches wildcard CORS with credentials, missing rate-limit
+              middleware, and unprotected API routes without any auth provider
+              detected.</p>
+            </div>
+          </div>
+          <div class="feature">
+            <span class="feature-num">C.04</span>
+            <div>
+              <h4>Code patterns &amp; dependencies</h4>
+              <p>SQL string concatenation, <code>eval()</code> usage, and a full
+              <code>npm audit</code> pass with CVE references and upgrade paths.</p>
+            </div>
+          </div>
+          <div class="feature">
+            <span class="feature-num">C.05</span>
+            <div>
+              <h4>AI-ready fix prompts</h4>
+              <p>Every failing check generates a prompt tailored to your stack.
+              Paste into your LLM of choice, get contextual fixes, ship.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-body">
+      <div>
+        <p class="detail-section-label">The stack</p>
+      </div>
+      <div>
+        <div class="project-stack" style="gap: 0.6rem;">
+          <span>Node.js</span>
+          <span>TypeScript</span>
+          <span>CLI</span>
+          <span>OWASP</span>
+          <span>MIT License</span>
+          <span>npm provenance</span>
+          <span>759 tests</span>
+          <span>Lemon Squeezy</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-body">
+      <div>
+        <p class="detail-section-label">Elsewhere</p>
+      </div>
+      <div>
+        <div class="links-grid">
+          <a class="link-card" href="https://bastion.wiki" target="_blank" rel="noopener">
+            <span class="glyph">↗</span>
+            <span class="meta">
+              <span class="label">Website</span>
+              <span class="value">bastion.wiki</span>
+            </span>
+            <span class="arrow">→</span>
+          </a>
+          <a class="link-card" href="https://github.com/absastreon/bastion" target="_blank" rel="noopener">
+            <span class="glyph">{ }</span>
+            <span class="meta">
+              <span class="label">Source · MIT</span>
+              <span class="value">github.com/absastreon/bastion</span>
+            </span>
+            <span class="arrow">→</span>
+          </a>
+          <a class="link-card" href="https://bastion.wiki/checklist" target="_blank" rel="noopener">
+            <span class="glyph">✓</span>
+            <span class="meta">
+              <span class="label">Free tool</span>
+              <span class="value">Security checklist</span>
+            </span>
+            <span class="arrow">→</span>
+          </a>
+          <a class="link-card" href="https://bastion.wiki/owasp" target="_blank" rel="noopener">
+            <span class="glyph">§</span>
+            <span class="meta">
+              <span class="label">Guide</span>
+              <span class="value">OWASP primer</span>
+            </span>
+            <span class="arrow">→</span>
+          </a>
+          <a class="link-card" href="https://bastion.wiki/pricing" target="_blank" rel="noopener">
+            <span class="glyph">£</span>
+            <span class="meta">
+              <span class="label">Plans</span>
+              <span class="value">Pricing &amp; Pro</span>
+            </span>
+            <span class="arrow">→</span>
+          </a>
+          <a class="link-card" href="https://bastion.wiki/dashboard" target="_blank" rel="noopener">
+            <span class="glyph">◨</span>
+            <span class="meta">
+              <span class="label">For users</span>
+              <span class="value">Project dashboard</span>
+            </span>
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <a class="next-project" href="parkmoto.html">
+      <span class="label">N° 03 · Next record</span>
+      <h3 class="title">Park<em>Moto</em></h3>
+      <span class="arrow">→</span>
+    </a>
+  </main>
+
+  <div class="footer-rule">
+    <span>© MMXXVI · ABS Astreon</span>
+    <span>Made in London · v1.1</span>
+  </div>
+</body>
+</html>

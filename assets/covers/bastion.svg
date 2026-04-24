@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-label="Bastion cover">
+  <defs>
+    <pattern id="bs-grain" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+      <filter id="bs-noise">
+        <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+        <feColorMatrix values="0 0 0 0 0.1 0 0 0 0 0.08 0 0 0 0 0.05 0 0 0 0.04 0"/>
+      </filter>
+      <rect width="100" height="100" filter="url(#bs-noise)"/>
+    </pattern>
+  </defs>
+
+  <!-- Paper bg -->
+  <rect width="900" height="600" fill="#ece4d2"/>
+  <rect width="900" height="600" fill="url(#bs-grain)"/>
+
+  <!-- Inner frame rule -->
+  <rect x="36" y="36" width="828" height="528" fill="none" stroke="#c9bfa8" stroke-width="1"/>
+
+  <!-- Top meta strip -->
+  <g font-family="JetBrains Mono, monospace" font-size="11" letter-spacing="2.4" fill="#7a7161">
+    <text x="72" y="82">N° 02 · BASTION</text>
+    <text x="828" y="82" text-anchor="end">OPEN SOURCE · MIT</text>
+  </g>
+
+  <!-- Big title number -->
+  <text x="72" y="185" font-family="Fraunces, serif" font-size="108" font-style="italic" font-weight="300" fill="#1a1814" letter-spacing="-3">02</text>
+
+  <!-- Hexagonal shield mark (top right) -->
+  <g transform="translate(770, 160)">
+    <polygon points="0,-44 38,-22 38,22 0,44 -38,22 -38,-22" fill="none" stroke="#1a1814" stroke-width="1.5"/>
+    <polygon points="0,-30 26,-15 26,15 0,30 -26,15 -26,-15" fill="#1a1814"/>
+    <text x="0" y="6" text-anchor="middle" font-family="Fraunces, serif" font-size="28" font-style="italic" fill="#f1ebdd">B</text>
+  </g>
+
+  <!-- Terminal window -->
+  <g transform="translate(120, 240)">
+    <!-- Window chrome -->
+    <rect x="0" y="0" width="660" height="260" rx="8" fill="#1a1814"/>
+    <rect x="0" y="0" width="660" height="28" rx="8" fill="#2a2620"/>
+    <path d="M 0 28 L 660 28" stroke="#3d3830" stroke-width="1"/>
+
+    <!-- Traffic lights -->
+    <circle cx="18" cy="14" r="5" fill="#a6421c"/>
+    <circle cx="36" cy="14" r="5" fill="#c47452"/>
+    <circle cx="54" cy="14" r="5" fill="#7a7161"/>
+
+    <!-- Window title -->
+    <text x="330" y="18" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="1.5" fill="#7a7161">bastion-scan</text>
+
+    <!-- Terminal content -->
+    <g font-family="JetBrains Mono, monospace" font-size="12" fill="#ece4d2">
+      <text x="22" y="58"><tspan fill="#c47452">$</tspan> npx bastion-scan</text>
+      <text x="22" y="82" fill="#7a7161">Scanning project... stack detected: Next.js</text>
+
+      <text x="22" y="114"><tspan fill="#86a86b">✓</tspan> <tspan fill="#ece4d2">.gitignore — sensitive patterns excluded</tspan></text>
+      <text x="22" y="134"><tspan fill="#86a86b">✓</tspan> <tspan fill="#ece4d2">No hardcoded secrets found</tspan></text>
+      <text x="22" y="154"><tspan fill="#d4a24b">⚠</tspan> <tspan fill="#ece4d2">npm audit — 2 moderate vulnerabilities</tspan></text>
+      <text x="22" y="174"><tspan fill="#a6421c">✕</tspan> <tspan fill="#ece4d2">Missing Content-Security-Policy header</tspan></text>
+      <text x="22" y="194"><tspan fill="#86a86b">✓</tspan> <tspan fill="#ece4d2">CORS — restrictive policy detected</tspan></text>
+
+      <!-- Score bar -->
+      <text x="22" y="230" fill="#7a7161">Score:</text>
+      <text x="80" y="230" fill="#ece4d2">78/100</text>
+      <g transform="translate(180, 222)">
+        <rect x="0" y="-7" width="12" height="12" fill="#a6421c"/>
+        <rect x="16" y="-7" width="12" height="12" fill="#a6421c"/>
+        <rect x="32" y="-7" width="12" height="12" fill="#a6421c"/>
+        <rect x="48" y="-7" width="12" height="12" fill="#a6421c"/>
+        <rect x="64" y="-7" width="12" height="12" fill="#a6421c"/>
+        <rect x="80" y="-7" width="12" height="12" fill="#a6421c"/>
+        <rect x="96" y="-7" width="12" height="12" fill="#a6421c"/>
+        <rect x="112" y="-7" width="12" height="12" fill="#c47452"/>
+        <rect x="128" y="-7" width="12" height="12" fill="none" stroke="#3d3830" stroke-width="1"/>
+        <rect x="144" y="-7" width="12" height="12" fill="none" stroke="#3d3830" stroke-width="1"/>
+      </g>
+
+      <!-- Blinking cursor -->
+      <rect x="22" y="244" width="8" height="2" fill="#c47452"/>
+    </g>
+  </g>
+
+  <!-- Bottom tagline -->
+  <g>
+    <line x1="72" y1="552" x2="180" y2="552" stroke="#1a1814" stroke-width="1.2"/>
+    <text x="72" y="536" font-family="Fraunces, serif" font-size="26" font-style="italic" font-weight="300" fill="#1a1814" letter-spacing="-0.5">
+      Security, before it ships.
+    </text>
+  </g>
+
+  <!-- Corner ornament -->
+  <g stroke="#1a1814" stroke-width="1" fill="none">
+    <line x1="828" y1="528" x2="828" y2="552"/>
+    <line x1="828" y1="552" x2="804" y2="552"/>
+  </g>
+</svg>

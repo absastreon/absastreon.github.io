@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-label="Solis cover">
+  <defs>
+    <pattern id="so-grain" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+      <filter id="so-noise">
+        <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+        <feColorMatrix values="0 0 0 0 0.1 0 0 0 0 0.08 0 0 0 0 0.05 0 0 0 0.04 0"/>
+      </filter>
+      <rect width="100" height="100" filter="url(#so-noise)"/>
+    </pattern>
+  </defs>
+
+  <rect width="900" height="600" fill="#ece4d2"/>
+  <rect width="900" height="600" fill="url(#so-grain)"/>
+  <rect x="36" y="36" width="828" height="528" fill="none" stroke="#c9bfa8" stroke-width="1"/>
+
+  <g font-family="JetBrains Mono, monospace" font-size="11" letter-spacing="2.4" fill="#7a7161">
+    <text x="72" y="82">N° 07 · SOLIS</text>
+    <text x="828" y="82" text-anchor="end">STUDIO · IN DEVELOPMENT</text>
+  </g>
+
+  <text x="72" y="185" font-family="Fraunces, serif" font-size="108" font-style="italic" font-weight="300" fill="#1a1814" letter-spacing="-3">07</text>
+
+  <!-- Engraved sun motif (center) -->
+  <g transform="translate(470, 330)">
+    <!-- Long radiating rays (alternating lengths like an old engraving) -->
+    <g stroke="#1a1814" stroke-width="1.4" stroke-linecap="round">
+      <line x1="0" y1="-165" x2="0" y2="-130"/>
+      <line x1="0" y1="165" x2="0" y2="130"/>
+      <line x1="-165" y1="0" x2="-130" y2="0"/>
+      <line x1="165" y1="0" x2="130" y2="0"/>
+      <line x1="-117" y1="-117" x2="-92" y2="-92"/>
+      <line x1="117" y1="117" x2="92" y2="92"/>
+      <line x1="-117" y1="117" x2="-92" y2="92"/>
+      <line x1="117" y1="-117" x2="92" y2="-92"/>
+    </g>
+    <!-- Short rays (between the long ones) -->
+    <g stroke="#1a1814" stroke-width="0.9" stroke-linecap="round" opacity="0.75">
+      <line x1="-45" y1="-150" x2="-35" y2="-120"/>
+      <line x1="45" y1="-150" x2="35" y2="-120"/>
+      <line x1="-45" y1="150" x2="-35" y2="120"/>
+      <line x1="45" y1="150" x2="35" y2="120"/>
+      <line x1="-150" y1="-45" x2="-120" y2="-35"/>
+      <line x1="150" y1="-45" x2="120" y2="-35"/>
+      <line x1="-150" y1="45" x2="-120" y2="35"/>
+      <line x1="150" y1="45" x2="120" y2="35"/>
+    </g>
+
+    <!-- Outer dashed ring (orbit/day cycle) -->
+    <circle cx="0" cy="0" r="108" fill="none" stroke="#c9bfa8" stroke-width="0.8" stroke-dasharray="3 5"/>
+
+    <!-- Sun disc -->
+    <circle cx="0" cy="0" r="78" fill="#f1ebdd" stroke="#1a1814" stroke-width="1.2"/>
+    <circle cx="0" cy="0" r="68" fill="none" stroke="#c47452" stroke-width="0.8"/>
+
+    <!-- Inner engraved rays / face -->
+    <g stroke="#1a1814" stroke-width="0.6" stroke-linecap="round" opacity="0.5">
+      <line x1="0" y1="-62" x2="0" y2="-48"/>
+      <line x1="0" y1="62" x2="0" y2="48"/>
+      <line x1="-62" y1="0" x2="-48" y2="0"/>
+      <line x1="62" y1="0" x2="48" y2="0"/>
+      <line x1="-44" y1="-44" x2="-34" y2="-34"/>
+      <line x1="44" y1="44" x2="34" y2="34"/>
+      <line x1="-44" y1="44" x2="-34" y2="34"/>
+      <line x1="44" y1="-44" x2="34" y2="-34"/>
+    </g>
+
+    <!-- Dashboard widgets orbiting the sun -->
+    <!-- stock chart -->
+    <g transform="translate(-180, -90)">
+      <rect x="-28" y="-14" width="56" height="28" rx="2" fill="#1a1814"/>
+      <polyline points="-22,6 -14,-2 -6,2 2,-6 10,-3 18,-9"
+                fill="none" stroke="#86a86b" stroke-width="1.2"/>
+    </g>
+
+    <!-- to-do checkbox -->
+    <g transform="translate(195, -85)">
+      <rect x="-12" y="-12" width="24" height="24" rx="2" fill="#1a1814"/>
+      <path d="M -6 0 L -2 5 L 6 -4" fill="none" stroke="#3ecfa0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <!-- clock -->
+    <g transform="translate(-195, 95)">
+      <circle cx="0" cy="0" r="14" fill="#1a1814"/>
+      <circle cx="0" cy="0" r="14" fill="none" stroke="#c9bfa8" stroke-width="0.5"/>
+      <line x1="0" y1="0" x2="0" y2="-8" stroke="#f1ebdd" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="0" y1="0" x2="6" y2="3" stroke="#f1ebdd" stroke-width="1" stroke-linecap="round"/>
+      <circle cx="0" cy="0" r="1.5" fill="#c47452"/>
+    </g>
+
+    <!-- affirmation card -->
+    <g transform="translate(180, 100)">
+      <rect x="-34" y="-16" width="68" height="32" rx="3" fill="#f1ebdd" stroke="#1a1814" stroke-width="1"/>
+      <line x1="-26" y1="-7" x2="26" y2="-7" stroke="#c9bfa8" stroke-width="0.8"/>
+      <line x1="-26" y1="-1" x2="22" y2="-1" stroke="#c9bfa8" stroke-width="0.8"/>
+      <line x1="-26" y1="5" x2="18" y2="5" stroke="#c9bfa8" stroke-width="0.8"/>
+      <circle cx="-28" cy="-14" r="2" fill="#a6421c"/>
+    </g>
+  </g>
+
+  <!-- Horizon marks (bottom) -->
+  <g stroke="#7a7161" stroke-width="0.6" opacity="0.5">
+    <line x1="100" y1="480" x2="110" y2="480"/>
+    <line x1="140" y1="480" x2="150" y2="480"/>
+    <line x1="180" y1="480" x2="190" y2="480"/>
+    <line x1="710" y1="480" x2="720" y2="480"/>
+    <line x1="750" y1="480" x2="760" y2="480"/>
+    <line x1="790" y1="480" x2="800" y2="480"/>
+  </g>
+
+  <g>
+    <line x1="72" y1="552" x2="180" y2="552" stroke="#1a1814" stroke-width="1.2"/>
+    <text x="72" y="536" font-family="Fraunces, serif" font-size="26" font-style="italic" font-weight="300" fill="#1a1814" letter-spacing="-0.5">
+      Each day, laid out.
+    </text>
+  </g>
+
+  <g stroke="#1a1814" stroke-width="1" fill="none">
+    <line x1="828" y1="528" x2="828" y2="552"/>
+    <line x1="828" y1="552" x2="804" y2="552"/>
+  </g>
+</svg>
