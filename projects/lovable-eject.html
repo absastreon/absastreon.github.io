@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lovable-Eject — ABS Astreon</title>
-  <meta name="description" content="Lovable-Eject: a tiny CLI that exports Lovable projects so you can self-host anywhere." />
+  <title>Lovable-Eject · ABS Astreon</title>
+  <meta name="description" content="A small CLI that exports your Lovable project so you can host it wherever you want. Free and open source." />
   <meta name="theme-color" content="#f1ebdd" />
 
-  <meta property="og:title" content="Lovable-Eject — ABS Astreon" />
-  <meta property="og:description" content="Get off Lovable hosting. Self-host anywhere." />
+  <meta property="og:title" content="Lovable-Eject · ABS Astreon" />
+  <meta property="og:description" content="Get your code out of Lovable. Host it wherever you like." />
   <meta property="og:type" content="article" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -49,7 +49,7 @@
         <span>CLI · Free</span>
       </p>
       <h1 class="detail-title">Lovable-<em>Eject</em></h1>
-      <p class="detail-tagline">Out of lock-in. A one-command escape hatch for Lovable projects.</p>
+      <p class="detail-tagline">A one-command way to get your project off Lovable and hosted somewhere you control.</p>
     </section>
 
     <div class="detail-cover reveal d3">
@@ -62,22 +62,13 @@
       </div>
       <div class="detail-prose">
         <p>
-          Lovable is a lovely way to prototype. But the moment a project
-          grows past a weekend hack — real users, a custom domain, a need for
-          granular control — the hosting lock-in starts to chafe. Exporting
-          the code gives you files, but not a cleanly deployable project.
-          You end up hand-editing configs for an afternoon.
+          Lovable is a nice way to prototype. But once a project has real users or a custom domain, the hosting starts to feel restrictive. You can export the code, but what you get back isn't quite a project you can deploy. I ended up spending an afternoon hand-editing configs every time I wanted to move something off.
         </p>
         <p>
-          Lovable-Eject is the escape hatch. One command takes a Lovable
-          project and produces a clean, dependency-aware export ready to
-          deploy to Vercel, Netlify, a VPS, or anywhere that runs Node. No
-          leftover Lovable-specific files, no broken imports, no surprises.
-          Free, open source, does one thing well.
+          So I wrote Lovable-Eject. You run one command and it gives you a clean project ready to push to Vercel, Netlify, a VPS, or anywhere else that runs Node. No leftover Lovable files, no broken imports. It's free and open source and it does this one thing.
         </p>
         <p>
-          Built because I needed it, released because other people probably
-          do too.
+          I built it because I needed it. Put it out because other people probably do too.
         </p>
 
         <div class="cli-box">
@@ -97,32 +88,28 @@
             <span class="feature-num">F.01</span>
             <div>
               <h4>Clean export</h4>
-              <p>Strips Lovable-specific config, normalises project structure,
-              and outputs a standard repository you'd expect to find anywhere.</p>
+              <p>Removes the Lovable-specific config, tidies up the project structure, and gives you back something that looks like any other repository.</p>
             </div>
           </div>
           <div class="feature">
             <span class="feature-num">F.02</span>
             <div>
-              <h4>Host-agnostic output</h4>
-              <p>Works out of the box on Vercel, Netlify, Cloudflare Pages,
-              Railway, or a plain Node server. No vendor coupling.</p>
+              <h4>Host it anywhere</h4>
+              <p>The output works on Vercel, Netlify, Cloudflare Pages, Railway, or a Node server you run yourself. Nothing is tied to a specific host.</p>
             </div>
           </div>
           <div class="feature">
             <span class="feature-num">F.03</span>
             <div>
-              <h4>Env-var preservation</h4>
-              <p>Keeps your environment configuration intact, with a
-              <code>.env.example</code> generated for collaborators.</p>
+              <h4>Keeps your env setup</h4>
+              <p>Your environment variables come across intact, and it writes a <code>.env.example</code> so anyone else cloning the repo knows what to set.</p>
             </div>
           </div>
           <div class="feature">
             <span class="feature-num">F.04</span>
             <div>
-              <h4>Zero install</h4>
-              <p>Runs via <code>npx</code>. No global install, no config file,
-              no lock-in to another tool. Use it once and forget it.</p>
+              <h4>Nothing to install</h4>
+              <p>Runs with <code>npx</code>. No global install, no config file, nothing to remember. You use it once and you're done.</p>
             </div>
           </div>
         </div>

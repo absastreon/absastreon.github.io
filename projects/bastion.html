@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bastion — ABS Astreon</title>
-  <meta name="description" content="Bastion: privacy-first security scanner for AI-era builders. Runs locally via npx." />
+  <title>Bastion · ABS Astreon</title>
+  <meta name="description" content="Bastion is a free security scanner that runs on your own machine. One command checks for secrets, missing headers, and other common problems." />
   <meta name="theme-color" content="#f1ebdd" />
 
-  <meta property="og:title" content="Bastion — ABS Astreon" />
-  <meta property="og:description" content="Security for the AI-era builder — local, fast, free to start." />
+  <meta property="og:title" content="Bastion · ABS Astreon" />
+  <meta property="og:description" content="A free security scanner that runs on your own machine." />
   <meta property="og:type" content="article" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -49,7 +49,7 @@
         <span>Node.js · MIT</span>
       </p>
       <h1 class="detail-title"><em>Bastion</em></h1>
-      <p class="detail-tagline">Security for the AI-era builder — local, fast, free to start.</p>
+      <p class="detail-tagline">A security scanner you can run on your own machine. Free, open source, and built for people shipping a lot of AI-written code.</p>
     </section>
 
     <div class="detail-cover reveal d3">
@@ -62,26 +62,13 @@
       </div>
       <div class="detail-prose">
         <p>
-          Since the rise of AI-assisted code, even experienced engineers
-          routinely ship hardcoded secrets, missing security headers, and
-          unsafe default CORS policies. Stanford's research suggests
-          AI-generated code contains roughly <strong>40% more vulnerabilities</strong>
-          than hand-written equivalents — and enterprise security tooling
-          starts at £300/month, putting basic hygiene out of reach for
-          indie developers and small teams.
+          A lot of code being shipped right now is written with AI help, and a lot of it has basic security problems. Hardcoded API keys, missing headers, CORS policies that are wide open. Stanford research says AI-generated code has roughly <strong>40% more vulnerabilities</strong> than code written by hand. The tools that catch this kind of thing start at £300 a month, which rules out most indie developers and small teams.
         </p>
         <p>
-          Bastion is the tool I wished existed: a privacy-first scanner
-          that runs on your machine via <code>npx bastion-scan</code>,
-          checks for the twelve most common security gaps in seconds, and
-          generates AI-ready fix prompts tailored to your exact stack.
-          Paste them into Claude or ChatGPT and ship fixes the same day.
+          Bastion is what I wanted to exist. You run <code>npx bastion-scan</code>, it checks your project for the twelve most common problems in a few seconds, and it writes a fix prompt for each one. Paste that prompt into Claude or ChatGPT and you can ship the fix the same afternoon.
         </p>
         <p>
-          Open source under MIT. No accounts, no uploads, no cloud. Self-scans
-          at 100/100, ships with 759 tests, and is distributed with npm
-          provenance. The Pro tier adds extra checks and a dashboard, but
-          the core scanner will always be free.
+          It's MIT licensed and open source. Nothing uploads anywhere, no accounts, nothing leaves your machine. It scans itself at 100 out of 100, has 759 tests, and ships with npm provenance. There's a Pro tier that adds more checks and a dashboard, but the scanner itself is free and will stay that way.
         </p>
 
         <div class="cli-box">
@@ -100,43 +87,36 @@
           <div class="feature">
             <span class="feature-num">C.01</span>
             <div>
-              <h4>Configuration &amp; secrets</h4>
-              <p><code>.gitignore</code> patterns, <code>.env.example</code> validation,
-              hardcoded API keys (OpenAI, AWS, Stripe, etc.), and sensitive file
-              detection before they hit your repo.</p>
+              <h4>Config and secrets</h4>
+              <p>Checks your <code>.gitignore</code>, validates your <code>.env.example</code>, and finds hardcoded API keys for OpenAI, AWS, Stripe, and others before they end up in your repo.</p>
             </div>
           </div>
           <div class="feature">
             <span class="feature-num">C.02</span>
             <div>
-              <h4>Security headers &amp; transport</h4>
-              <p>CSP, HSTS, X-Frame-Options, X-Content-Type-Options, SSL cert
-              expiry, TLS version, HTTPS redirects. The stuff browsers expect.</p>
+              <h4>Security headers and transport</h4>
+              <p>Looks at CSP, HSTS, X-Frame-Options, and X-Content-Type-Options. Checks your SSL certificate expiry, TLS version, and HTTPS redirects. The basic stuff browsers expect to see.</p>
             </div>
           </div>
           <div class="feature">
             <span class="feature-num">C.03</span>
             <div>
-              <h4>CORS, rate limiting &amp; auth</h4>
-              <p>Catches wildcard CORS with credentials, missing rate-limit
-              middleware, and unprotected API routes without any auth provider
-              detected.</p>
+              <h4>CORS, rate limiting, and auth</h4>
+              <p>Flags wildcard CORS paired with credentials, missing rate-limit middleware, and API routes that don't have any auth in front of them.</p>
             </div>
           </div>
           <div class="feature">
             <span class="feature-num">C.04</span>
             <div>
-              <h4>Code patterns &amp; dependencies</h4>
-              <p>SQL string concatenation, <code>eval()</code> usage, and a full
-              <code>npm audit</code> pass with CVE references and upgrade paths.</p>
+              <h4>Code patterns and dependencies</h4>
+              <p>Looks for SQL strings being concatenated, uses of <code>eval()</code>, and runs a full <code>npm audit</code> with CVE references and the version you need to upgrade to.</p>
             </div>
           </div>
           <div class="feature">
             <span class="feature-num">C.05</span>
             <div>
-              <h4>AI-ready fix prompts</h4>
-              <p>Every failing check generates a prompt tailored to your stack.
-              Paste into your LLM of choice, get contextual fixes, ship.</p>
+              <h4>Fix prompts for your LLM</h4>
+              <p>Every failing check comes with a prompt written for your specific stack. Paste it into Claude or ChatGPT, get the fix, ship it.</p>
             </div>
           </div>
         </div>
