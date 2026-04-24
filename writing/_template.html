@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+  ══════════════════════════════════════════════════════════════
+  WRITING POST TEMPLATE
+
+  How to use:
+    1. Duplicate this file:
+         cp _template.html my-post-slug.html
+    2. Fill in every {{ PLACEHOLDER }} below.
+    3. Copy the listing-entry snippet at the bottom of this file
+       into writing/index.html (inside .writing-list).
+    4. Bump the counter tag in index.html:
+         <span class="tag">NN · Posts</span>
+    5. Ship:
+         git add .
+         git commit -m "Add writing: <short title>"
+         git push
+
+  House voice:
+    · First person, contractions welcome ("I've", "it's", "I'd")
+    · No em dashes, use commas/periods/parens or rephrase
+    · No marketing words (seamless, powerful, revolutionary, etc.)
+    · Specific and concrete beats general and abstract
+    · Target 500 to 800 words
+
+  Quick reference:
+    · Drop-cap on first <p> is automatic (no class needed)
+    · Inside <h1> and <h2>, wrap one word in <em> for accent red
+    · Read time ≈ word count ÷ 250, rounded up
+    · If a post ties to a project, keep the backlink card at the
+      bottom; otherwise delete that whole <a> block
+  ══════════════════════════════════════════════════════════════
+-->
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+
+  <title>{{ POST TITLE }} · ABS Astreon</title>
+  <meta name="description" content="{{ One sentence describing the post. }}" />
+  <meta name="theme-color" content="#f1ebdd" />
+
+  <meta property="og:title" content="{{ POST TITLE }} · ABS Astreon" />
+  <meta property="og:description" content="{{ One sentence describing the post. }}" />
+  <meta property="og:type" content="article" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+  <header class="shell site-header">
+    <div class="wordmark reveal d1">
+      <a href="../index.html">ABS <span>·</span> ASTREON</a>
+    </div>
+    <nav class="site-nav reveal d2">
+      <a href="../index.html#works">Works</a>
+      <a href="../index.html#workshop">Workshop</a>
+      <a href="index.html">Writing</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="shell-narrow">
+    <a href="index.html" class="back-link reveal d1">
+      <span class="arrow">←</span> Back to writing
+    </a>
+
+    <article class="writing-article">
+      <header class="writing-article-header reveal d2">
+        <p class="writing-article-kicker">
+          <span class="num">{{ NN }}</span>
+          <span class="sep"></span>
+          <span>{{ Kicker label, e.g. Build notes }}</span>
+          <span class="sep"></span>
+          <span>{{ Related topic or project name }}</span>
+        </p>
+        <h1 class="writing-article-title">{{ Headline with one <em>accent word</em> }}</h1>
+        <p class="writing-article-dateline">
+          <span>{{ Month }} · MMXXVI</span>
+          <span class="sep"></span>
+          <span>{{ N }} min read</span>
+          <span class="sep"></span>
+          <span>by ABS Astreon</span>
+        </p>
+      </header>
+
+      <div class="writing-prose reveal d3">
+
+        <p>
+          {{ Opening paragraph. Set the scene. What were you working on, what
+          wasn't working, what did you notice. Be specific. "Twenty minutes"
+          beats "a while". The first letter here gets a red drop-cap
+          automatically, no class needed. }}
+        </p>
+
+        <p>
+          {{ Second paragraph. State the aim or the thesis, plainly. One or two
+          sentences is fine. }}
+        </p>
+
+        <h2>{{ Section heading with an optional <em>accent word</em> }}</h2>
+        <p>
+          {{ Paragraph. Inline <code>code spans</code> work for technical terms.
+          <strong>Strong emphasis</strong> is allowed but used sparingly, the
+          voice rarely needs it. Links look like
+          <a href="https://example.com">this</a>. }}
+        </p>
+
+        <h2>{{ Another section }}</h2>
+        <p>
+          {{ Paragraph. }}
+        </p>
+        <p>
+          {{ Paragraph. Remember no em dashes. Use commas, periods, parens, or
+          rephrase. }}
+        </p>
+
+        <h2>What's next</h2>
+        <p>
+          {{ Closing paragraph. What you learned, what's on the bench, or a
+          plain pointer to whatever you just described. Keep it small. }}
+        </p>
+
+      </div>
+
+      <p class="writing-byline reveal d3">
+        <em>ABS Astreon</em>
+        <span class="sep"></span>
+        <span>London · MMXXVI</span>
+      </p>
+
+      <!--
+        BACKLINK CARD
+        If the post ties to a specific project, keep this block and fill it in.
+        If not, delete the whole <a class="writing-backlink">…</a> below.
+      -->
+      <a class="writing-backlink reveal d3" href="../projects/{{ project-slug }}.html">
+        <span class="meta">
+          <span class="label">Read the project record</span>
+          <span class="title">{{ Project name with <em>emphasis</em> }} · N° {{ NN }}</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+
+    </article>
+  </main>
+
+  <div class="footer-rule">
+    <span>© MMXXVI · ABS Astreon</span>
+    <span>Made in London · v1.1</span>
+  </div>
+</body>
+</html>
+
+<!--
+  ══════════════════════════════════════════════════════════════
+  LISTING ENTRY — paste into writing/index.html
+
+  Find <div class="writing-list"> and paste this snippet inside.
+  Newest post goes first. Also bump the counter tag nearby
+  (the "01 · Posts" one) to reflect the new total.
+
+  <a class="writing-entry reveal d3" href="my-post-slug.html">
+    <p class="writing-entry-meta">
+      <span class="num">NN</span>
+      <span class="sep"></span>
+      <span>Month · MMXXVI</span>
+      <span class="sep"></span>
+      <span>N min read</span>
+    </p>
+    <div class="writing-entry-body">
+      <h3 class="writing-entry-title">Headline with one <em>em word</em></h3>
+      <p class="writing-entry-dek">
+        One or two sentences describing the post.
+      </p>
+      <span class="writing-entry-cta">
+        Read the piece <span class="arrow">→</span>
+      </span>
+    </div>
+  </a>
+  ══════════════════════════════════════════════════════════════
+-->
