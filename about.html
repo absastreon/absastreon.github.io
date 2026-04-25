@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="noindex" />
 
   <title>About · ABS Astreon</title>
-  <meta name="description" content="A short note on who I am, what I'm into, and the people I learn from." />
+  <meta name="description" content="Independent developer in London. Bikes, books, and building small things." />
   <meta name="theme-color" content="#f1ebdd" />
 
   <meta property="og:title" content="About · ABS Astreon" />
-  <meta property="og:description" content="A short note on who I am and what I'm into." />
+  <meta property="og:description" content="Independent developer in London. Bikes, books, and building small things." />
   <meta property="og:type" content="website" />
 
   <link rel="canonical" href="https://absastreon.github.io/about.html" />
@@ -27,14 +26,6 @@
 </head>
 
 <body>
-  <!--
-    DRAFT NOTE: This page is live but noindex'd. To publish:
-      1. Remove the <meta name="robots" content="noindex"> tag above
-      2. Replace every {{ TODO }} with real content (see README in this section
-         or ask Claude to draft from a list of inputs)
-      3. Bump page version + push
-  -->
-
   <header class="shell site-header">
     <div class="wordmark reveal d1">
       <a href="index.html">ABS <span>·</span> ASTREON</a>
@@ -61,7 +52,7 @@
         <span>Personal</span>
       </p>
       <h1 class="detail-title"><em>About</em></h1>
-      <p class="detail-tagline">{{ TODO · One-line tagline. Something like "Independent developer in London. Bikes, books, building small things." Honest and specific. }}</p>
+      <p class="detail-tagline">Independent developer in London. Bikes, books, and building small things.</p>
     </section>
 
     <section class="detail-body">
@@ -70,7 +61,7 @@
       </div>
       <div class="detail-prose">
         <p>
-          {{ TODO · 3-4 sentence bio in your voice. Where you're from, what you do, what you care about right now. Avoid CV-speak. Example shape: "I'm Amish. I build small software products in London, mostly on my own. Started taking it seriously in MMXXV when I shipped NotchWise. Currently splitting time between four live products and two healthcare SaaS apps in development." }}
+          I'm Amish. I build small software products in London, mostly on my own. Started taking it seriously in MMXXVI when I shipped <a href="projects/notchwise.html">NotchWise</a>. Currently splitting time between four live products and two healthcare SaaS apps in development.
         </p>
       </div>
     </section>
@@ -81,20 +72,83 @@
       </div>
       <div class="detail-prose">
         <p style="color: var(--ink-mute); font-size: 0.85rem; font-family: var(--mono); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.5rem;">
-          Last updated · {{ TODO · Month MMXXVI }}
+          Last updated · April MMXXVI
         </p>
 
         <p>
-          <strong>Reading.</strong> {{ TODO · 1-2 books. Title and author, plus one sentence on why. }}
+          <strong>Reading.</strong> Two very different books on roughly the same question.
+        </p>
+
+        <div class="reading-list">
+
+          <article class="book-card">
+            <a href="https://markmanson.net/books/everything-is-fucked" target="_blank" rel="noopener" class="book-cover" aria-label="Everything Is F*cked by Mark Manson">
+              <img src="assets/about/books/everything-is-fucked.jpg" alt="Cover of Everything Is F*cked by Mark Manson, with the title in white block letters on a teal background and an inkblot replacing the U" width="334" height="500" loading="lazy" />
+            </a>
+            <div class="book-meta">
+              <h3 class="book-title">Everything Is <em>F*cked</em></h3>
+              <span class="book-author">Mark Manson</span>
+              <p class="book-note">A book about hope, written from the other side of cynicism.</p>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <a href="https://greenlights.com" target="_blank" rel="noopener" class="book-cover" aria-label="Greenlights by Matthew McConaughey">
+              <img src="assets/about/books/greenlights.jpg" alt="Cover of Greenlights by Matthew McConaughey, featuring a black and white portrait of the author with the title in green serif type" width="400" height="614" loading="lazy" />
+            </a>
+            <div class="book-meta">
+              <h3 class="book-title"><em>Greenlights</em></h3>
+              <span class="book-author">Matthew McConaughey</span>
+              <p class="book-note">Memoir-as-bumper-stickers. Better than that makes it sound.</p>
+            </div>
+          </article>
+
+        </div>
+        <p>
+          <strong>Riding.</strong> A Honda CB650R (e-clutch, black). London commutes mostly, with the occasional out-of-town run when the weather permits.
         </p>
         <p>
-          <strong>Riding.</strong> {{ TODO · Your bike, where you've been riding lately, anything you're learning. }}
+          <strong>Learning from.</strong> A short list, not a long one. The accounts whose absence from my feed I'd actually notice.
+        </p>
+
+        <div class="people-list">
+
+          <a class="person-card" href="https://www.youtube.com/@TinaHuang1" target="_blank" rel="noopener">
+            <span class="platform">▶</span>
+            <span class="meta">
+              <span class="name">Tina Huang</span>
+              <span class="handle">YouTube · @TinaHuang1</span>
+              <span class="why">Practical breakdowns of the data and AI tooling I'm actually trying to learn.</span>
+            </span>
+            <span class="arrow">→</span>
+          </a>
+
+          <a class="person-card" href="https://www.youtube.com/@AndrejKarpathy" target="_blank" rel="noopener">
+            <span class="platform">▶</span>
+            <span class="meta">
+              <span class="name">Andrej Karpathy</span>
+              <span class="handle">YouTube · @AndrejKarpathy</span>
+              <span class="why">The clearest first-principles teacher in machine learning right now. Worth slowing down for.</span>
+            </span>
+            <span class="arrow">→</span>
+          </a>
+
+          <a class="person-card" href="https://www.instagram.com/london_fitness_guy/" target="_blank" rel="noopener">
+            <span class="platform">◐</span>
+            <span class="meta">
+              <span class="name">London Fitness Guy</span>
+              <span class="handle">Instagram · @london_fitness_guy</span>
+              <span class="why">Short workout videos that actually fit between meetings.</span>
+            </span>
+            <span class="arrow">→</span>
+          </a>
+
+        </div>
+        <p>
+          <strong>Working on.</strong> Two healthcare SaaS apps, deep in build mode. One is currently being tested in Docker before it goes to Azure. Both are quiet for now.
         </p>
         <p>
-          <strong>Listening.</strong> {{ TODO · A podcast, an album, a playlist. Be specific. }}
-        </p>
-        <p>
-          <strong>Working on.</strong> {{ TODO · 1-2 sentences on what's taking up your week. Could overlap with what's on the homepage but framed personally. }}
+          <strong>Running my brain on.</strong> Notion, daily. It's the second brain I actually open.
         </p>
       </div>
     </section>
@@ -105,56 +159,23 @@
       </div>
       <div class="detail-prose">
         <p>
-          {{ TODO · A short paragraph about getting into motorbikes last year. The kind of thing you'd say to someone who asked over a coffee. Why two wheels, what you ride, where you ride. Keep it warm and specific.  }}
+          I passed my test in October MMXXIV and bought my first bike a year later: a Honda CB650R, the e-clutch model, in black. The bike was a selfish purchase. Something for me, something that lets me switch off from the rest of the world. When I need to clear my head, two wheels does it better than anything else I've tried, and the trade-offs aren't even close.
         </p>
 
-        <!-- When ready, replace this placeholder with:
-             <figure class="writing-figure">
-               <img src="assets/about/bike.jpg" alt="..." width="..." height="..." loading="lazy">
-               <figcaption><span class="figure-num">Fig 01</span><span class="figure-text">[caption]</span></figcaption>
-             </figure>
-        -->
         <figure class="writing-figure">
-          <div class="figure-placeholder" aria-hidden="true">
-            <span class="figure-placeholder-label">Photo pending</span>
-            <span class="figure-placeholder-detail">A shot of your bike, ideally somewhere recognisable in London</span>
-            <span class="figure-placeholder-target">assets/about/bike.jpg</span>
-          </div>
+          <img src="assets/about/bike.jpg" alt="My Honda CB650R, black, parked outside in London with a tail bag fitted, side profile in afternoon sun" width="1080" height="785" loading="lazy">
           <figcaption>
             <span class="figure-num">Fig 01</span>
-            <span class="figure-text">{{ TODO · Caption. Make of bike, where the photo was taken. }}</span>
+            <span class="figure-text">The CB650R. Photographed where it lives, in London.</span>
           </figcaption>
         </figure>
 
         <p>
-          {{ TODO · OPTIONAL second paragraph. If you have a "for new riders" piece, link it here:
-          "If you're thinking about getting into riding yourself, I wrote up the gear I bought, the gear I'm still buying, and a few things I'd tell myself before my first lesson. <a href=\"writing/starting-on-two-wheels.html\">It's here.</a>" }}
-        </p>
-      </div>
-    </section>
-
-    <section class="detail-body">
-      <div>
-        <p class="detail-section-label">People I learn from</p>
-      </div>
-      <div class="detail-prose">
-        <p style="color: var(--ink-mute); font-size: 0.95rem; line-height: 1.55; margin-bottom: 1.5rem;">
-          A short list, not a long one. Names I've genuinely learnt from in the last six months. Updated when something stops being true.
+          Had my first drop early this year, which was as annoying as you'd expect. It also gave me something useful: the realisation that you can't fully control these things, and that a set of frame sliders earns its place fast. The confidence came back faster than I expected.
         </p>
 
         <p>
-          {{ TODO · 6-10 named people / accounts, each with one sentence on why.
-          Format suggestion (one paragraph per person, or use a list if you prefer):
-
-          <strong>[Name]</strong> ([handle/platform]).
-          [One sentence on what they teach or why you keep coming back.]
-
-          Example:
-          <strong>Simon Willison</strong> (<a href="...">simonwillison.net</a>).
-          The clearest writer on what's actually new in AI engineering, week by week.
-
-          Skip generic famous names. Pick the ones whose absence from your feed
-          you'd actually notice. }}
+          If you're thinking about getting into riding yourself, I wrote up <a href="writing/starting-on-two-wheels.html">the gear I bought, the gear I'm still buying, and a few things I'd tell myself before my first lesson</a>.
         </p>
       </div>
     </section>
@@ -165,7 +186,7 @@
       </div>
       <div class="detail-prose">
         <p>
-          The site has a <a href="writing/index.html">writing section</a> with build notes on most of the projects, a <a href="uses.html">uses page</a> if you want to know what I build with, and a <a href="writing/rss.xml">RSS feed</a> for the writing. For anything else, <a href="mailto:absastreon@gmail.com">email me</a>.
+          The site has a <a href="writing/index.html">writing section</a> with build notes on most of the projects, a <a href="uses.html">uses page</a> if you want to know what I build with, and an <a href="writing/rss.xml">RSS feed</a> for the writing. For anything else, <a href="mailto:absastreon@gmail.com">email me</a>.
         </p>
       </div>
     </section>
@@ -175,7 +196,7 @@
   <div class="footer-rule">
     <span>© MMXXVI · ABS Astreon</span>
     <span>Last updated · April MMXXVI</span>
-    <span>Made in London · v1.5</span>
+    <span>Made in London · v1.7</span>
   </div>
 </body>
 </html>

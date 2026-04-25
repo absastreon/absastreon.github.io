@@ -1606,3 +1606,185 @@ button:focus-visible,
   opacity: 0.55;
   margin-top: 0.4rem;
 }
+
+/* ═══════════════════════════════════════════════════════════
+   About page · v1.7
+   Book recommendation cards and typographic person cards.
+   ═══════════════════════════════════════════════════════════ */
+
+/* ——— Reading list (book cards) ————————————————————————
+   Side-by-side cover + metadata, two-up on wider screens,
+   stacked on mobile. The cover sits in a thin border echoing
+   the figure treatment used for screenshots. */
+.reading-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin: 1.5rem 0 0.5rem;
+  max-width: 720px;
+}
+@media (min-width: 720px) {
+  .reading-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+.book-card {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 1.4rem;
+  align-items: start;
+}
+.book-cover {
+  width: 110px;
+  aspect-ratio: 2 / 3;
+  background: var(--paper-warm);
+  border: 1px solid var(--rule);
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 1px 2px rgba(26, 24, 20, 0.08), 0 4px 12px rgba(26, 24, 20, 0.06);
+}
+.book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.book-cover-placeholder {
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.7rem;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  line-height: 1.4;
+}
+.book-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 0;
+}
+.book-title {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 0;
+  color: var(--ink);
+}
+.book-title em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--accent);
+}
+.book-author {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.book-note {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin-top: 0.3rem;
+}
+
+/* ——— Person cards (people I learn from) ————————————————
+   Typographic recommendation cards. Same visual rhythm as
+   .link-card on project pages, but tuned for naming people
+   and signalling a one-line reason. The whole card is
+   clickable. */
+.people-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0 0.5rem;
+}
+@media (min-width: 720px) {
+  .people-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.person-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem 1.2rem;
+  align-items: center;
+  padding: 1.2rem 1.35rem;
+  border: 1px solid var(--rule);
+  background: rgba(255, 255, 255, 0.35);
+  color: var(--ink);
+  transition: all 0.25s ease;
+  position: relative;
+}
+.person-card:hover {
+  border-color: var(--ink);
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.55);
+}
+.person-card .platform {
+  font-family: var(--serif);
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: var(--accent);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  width: 1.5rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+.person-card .meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+  grid-column: 2;
+}
+.person-card .name {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+  font-weight: 400;
+  font-size: 1.1rem;
+  letter-spacing: -0.005em;
+  line-height: 1.2;
+  color: var(--ink);
+}
+.person-card .handle {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.person-card .why {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+  margin-top: 0.25rem;
+}
+.person-card .arrow {
+  font-family: var(--mono);
+  color: var(--ink-mute);
+  transition: transform 0.25s ease, color 0.25s ease;
+  align-self: center;
+}
+.person-card:hover .arrow {
+  color: var(--accent);
+  transform: translateX(4px);
+}
