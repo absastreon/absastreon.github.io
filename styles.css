@@ -1402,3 +1402,66 @@ section.block {
   color: var(--accent);
   transform: translateX(4px);
 }
+
+/* ═══════════════════════════════════════════════════════════
+   Accessibility & polish · v1.3
+   ═══════════════════════════════════════════════════════════ */
+
+/* ——— Keyboard focus rings ———————————————————————————————
+   :focus-visible only fires for keyboard navigation, not mouse
+   clicks. So mouse users see nothing change, but anyone tabbing
+   through gets a clear, accent-coloured outline that respects
+   the existing palette. Applies broadly to interactive surfaces. */
+
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible,
+.cli-box:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.site-nav a:focus-visible,
+.wordmark a:focus-visible,
+.back-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.project:focus-visible,
+.workshop-card:focus-visible,
+.link-card:focus-visible,
+.writing-entry:focus-visible,
+.writing-backlink:focus-visible,
+.next-project:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 6px;
+}
+
+/* ——— Boosted cli-box copied state ————————————————————————
+   The original copied flash was subtle. Boosting the contrast
+   and adding a brief inner glow makes the success feedback
+   unmissable without becoming gaudy. */
+
+.cli-box-copied {
+  border-color: var(--accent);
+  background: #2d2620;
+  box-shadow: inset 0 0 0 1px var(--accent-soft), 0 0 0 4px rgba(196, 116, 82, 0.15);
+}
+.cli-box-copied::before {
+  color: var(--accent);
+}
+.cli-box-copied .copy-hint {
+  color: var(--accent-soft);
+  opacity: 1;
+  font-weight: 500;
+}
+
+/* ——— Note on dark mode ——————————————————————————————————
+   Intentionally not implemented. The warm paper palette is
+   the visual brand of the site; a dark mode would either
+   require a separate, equally-considered dark palette or
+   would dilute the editorial aesthetic with a default invert.
+   Neither is worth doing right now. If a dark theme is added
+   later, it should be designed from scratch, not derived. */

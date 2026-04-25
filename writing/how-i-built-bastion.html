@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+
+  <title>How I built Bastion · ABS Astreon</title>
+  <meta name="description" content="Why pro-grade security tooling is gatekept, and what happens when you replace the report with a fix prompt." />
+  <meta name="theme-color" content="#f1ebdd" />
+
+  <meta property="og:title" content="How I built Bastion · ABS Astreon" />
+  <meta property="og:description" content="Build notes on a free security scanner for indie developers." />
+  <meta property="og:type" content="article" />
+
+  <link rel="canonical" href="https://absastreon.github.io/writing/how-i-built-bastion.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+  <!--
+    DRAFT NOTE: This file is live on GitHub Pages but not linked from
+    writing/index.html. It carries <meta name="robots" content="noindex">
+    so search engines won't pick it up. To publish:
+      1. Remove the noindex meta tag above
+      2. Add a listing entry to writing/index.html
+      3. Bump the counter tag to "03 · Posts"
+  -->
+
+  <header class="shell site-header">
+    <div class="wordmark reveal d1">
+      <a href="../index.html">ABS <span>·</span> ASTREON</a>
+    </div>
+    <nav class="site-nav reveal d2">
+      <a href="../index.html#works">Works</a>
+      <a href="../index.html#workshop">Workshop</a>
+      <a href="index.html">Writing</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="shell-narrow">
+    <a href="index.html" class="back-link reveal d1">
+      <span class="arrow">←</span> Back to writing
+    </a>
+
+    <article class="writing-article">
+      <header class="writing-article-header reveal d2">
+        <p class="writing-article-kicker">
+          <span class="num">03</span>
+          <span class="sep"></span>
+          <span>Build notes</span>
+          <span class="sep"></span>
+          <span>Bastion</span>
+        </p>
+        <h1 class="writing-article-title">How I built <em>Bastion</em></h1>
+        <p class="writing-article-dateline">
+          <span>April · MMXXVI</span>
+          <span class="sep"></span>
+          <span>6 min read</span>
+          <span class="sep"></span>
+          <span>by ABS Astreon</span>
+        </p>
+      </header>
+
+      <div class="writing-prose reveal d3">
+
+        <p>
+          The price of a serious security scan is roughly £300 a month, every month, forever. That's the floor, not the ceiling. Above it are the enterprise tools with five-figure annual contracts and sales calls and procurement reviews. Below it is a long tail of indie developers, two-person startups, hobby projects, and side businesses, almost none of whom can justify £3,600 a year on a check that might catch a CSP misconfiguration once a quarter. So they don't run one. And then they ship code with a hardcoded API key in it, get scraped, lose access, and post on X about it.
+        </p>
+
+        <p>
+          Bastion is what fits between those two states. It's a security scanner that runs on your own machine in a few seconds. It's free. It's MIT licensed. And it changes the deliverable.
+        </p>
+
+        <h2>The 40% problem nobody is <em>pricing</em> for</h2>
+
+        <p>
+          A <a href="https://arxiv.org/abs/2211.03622" target="_blank" rel="noopener">Stanford study</a> in 2022 found that developers using AI assistants wrote code with significantly more security vulnerabilities than developers writing without them, and were also more likely to believe their code was secure. Roughly 40% more vulnerabilities, depending on how you measure. The numbers have probably shifted since then, but the direction hasn't. The amount of code being written with AI help has gone up. The proportion of that code with basic security holes has not gone down.
+        </p>
+
+        <p>
+          The market response has been to charge more. The reasoning is sensible from inside an enterprise: if AI is generating ten times the code, it's generating ten times the vulnerabilities, so the scan is more valuable. Charge accordingly. But this argument falls apart for the people most exposed: indies and small teams shipping production apps with no security budget, who are now writing more code with AI help than anyone, and who have nowhere to send a £300/month line item.
+        </p>
+
+        <h2>What scanners usually give you</h2>
+
+        <p>
+          Run any commercial scanner and you get a report. PDF, dashboard, JSON, take your pick. The report tells you that you have, say, twelve issues of varying severity. It explains each issue. It cites the OWASP category. It links to a remediation guide. It is competent, professional, and almost completely useless if you're a one-person team trying to ship a fix before lunch.
+        </p>
+
+        <p>
+          The problem is the gap between "you have a CORS misconfiguration on your API route" and "here is the corrected middleware for your specific stack". The report stops at the first line. The fix lives in the second. Bridging that gap, for one developer with twelve issues across three frameworks, takes hours of context-switching that nobody factored into the pricing.
+        </p>
+
+        <h2>Making the prompt the deliverable</h2>
+
+        <p>
+          The thing Bastion changes is what comes out the other end. Instead of a finding, it gives you a fix prompt: a piece of text written for whatever stack the issue is in, ready to paste into Claude or ChatGPT. The LLM does the part that used to take an hour. You read the diff, push it, move on.
+        </p>
+
+        <p>
+          That's not a feature. It's the product. Every other check in the system was designed around it. The <code>.gitignore</code> auditor doesn't just flag a leaked <code>.env</code>, it generates the rotation prompt with the right key prefix. The CORS check doesn't just say "wildcard with credentials is dangerous", it gives you the corrected Express or Fastify middleware. <code>npm audit</code> integration doesn't stop at "you have CVE-2024-XXXXX", it tells the LLM the version constraint to honour. The whole tool is a prompt-generating machine that happens to do scanning on the way there.
+        </p>
+
+        <h2>The choice I almost got wrong</h2>
+
+        <p>
+          For a few weeks I had Bastion designed with optional cloud upload. Run the scan, send the results to a dashboard, view your project's security posture over time. It was the obvious model. Every other scanner does it. SaaS, MRR, recurring revenue.
+        </p>
+
+        <p>
+          What stopped me was thinking about the audience. The people most likely to use a free CLI scanner are the ones least likely to want their codebase metadata uploaded anywhere. The whole reason they're not paying £300 a month isn't price alone, it's that they don't want the relationship that price implies. Bastion runs entirely on your machine. Nothing is uploaded. There are no accounts. The Pro tier exists, but it adds more checks, not more dependence.
+        </p>
+
+        <p>
+          That's the line. The free tool stays free, runs locally, and never sends anything anywhere. The Pro tier is for people who want the deeper checks. Both are owned, in the old sense of the word.
+        </p>
+
+        <h2>What I'd say to a developer shipping next week</h2>
+
+        <p>
+          You probably have hardcoded keys in a <code>.env</code> that's tracked. You probably have at least one CORS rule that allows credentials with a wildcard. You almost certainly have a security header missing from your responses. None of these are interesting problems. All of them are findable in about eight seconds with one command. <code>npx bastion-scan scan</code>, paste the prompts it gives you, ship the fixes the same afternoon. It'll cost you nothing and protect you from the kind of mistake that makes for a bad weekend.
+        </p>
+
+      </div>
+
+      <p class="writing-byline reveal d3">
+        <em>ABS Astreon</em>
+        <span class="sep"></span>
+        <span>London · MMXXVI</span>
+      </p>
+
+      <a class="writing-backlink reveal d3" href="../projects/bastion.html">
+        <span class="meta">
+          <span class="label">Read the project record</span>
+          <span class="title"><em>Bastion</em> · N° 02</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+
+    </article>
+  </main>
+
+  <div class="footer-rule">
+    <span>© MMXXVI · ABS Astreon</span>
+    <span>Last updated · April MMXXVI</span>
+    <span>Made in London · v1.3</span>
+  </div>
+</body>
+</html>

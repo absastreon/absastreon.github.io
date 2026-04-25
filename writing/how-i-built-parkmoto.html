@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How I built ParkMoto · ABS Astreon</title>
+  <meta name="description" content="Why scattered council data turns London motorcycle parking into folk knowledge, and what happened when I tried to put it all on one map." />
+  <meta name="theme-color" content="#f1ebdd" />
+
+  <meta property="og:title" content="How I built ParkMoto · ABS Astreon" />
+  <meta property="og:description" content="Build notes on a free motorbike parking map for London." />
+  <meta property="og:type" content="article" />
+
+  <link rel="canonical" href="https://absastreon.github.io/writing/how-i-built-parkmoto.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+  <header class="shell site-header">
+    <div class="wordmark reveal d1">
+      <a href="../index.html">ABS <span>·</span> ASTREON</a>
+    </div>
+    <nav class="site-nav reveal d2">
+      <a href="../index.html#works">Works</a>
+      <a href="../index.html#workshop">Workshop</a>
+      <a href="index.html">Writing</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="shell-narrow">
+    <a href="index.html" class="back-link reveal d1">
+      <span class="arrow">←</span> Back to writing
+    </a>
+
+    <article class="writing-article">
+      <header class="writing-article-header reveal d2">
+        <p class="writing-article-kicker">
+          <span class="num">02</span>
+          <span class="sep"></span>
+          <span>Build notes</span>
+          <span class="sep"></span>
+          <span>ParkMoto</span>
+        </p>
+        <h1 class="writing-article-title">How I built Park<em>Moto</em></h1>
+        <p class="writing-article-dateline">
+          <span>April · MMXXVI</span>
+          <span class="sep"></span>
+          <span>4 min read</span>
+          <span class="sep"></span>
+          <span>by ABS Astreon</span>
+        </p>
+      </header>
+
+      <div class="writing-prose reveal d3">
+
+        <p>
+          I started riding last year, and most of what I know about parking a motorbike in London I learned by getting it wrong. Where the bays are. Which boroughs charge. Which painted M/C boxes have faded so badly the warden won't honour them. Nobody writes any of this down in one place. You ride, you ask, you remember, and over time you build a private map in your head that nobody else can see.
+        </p>
+
+        <p>
+          ParkMoto came out of one specific Wednesday. I had a meeting in the City and spent twenty minutes circling looking for a bay, switching between Google Maps, Waze, and a TfL page that hadn't been updated in months. Each one had a different version of the same information. None of them agreed. I parked, did the meeting, came home, and started building.
+        </p>
+
+        <h2>The data was the <em>actual</em> problem</h2>
+
+        <p>
+          I assumed the hard part would be the map. It wasn't. The hard part was that there is no single source. London has 32 boroughs plus the City of London, and they each handle motorcycle bays differently. Some publish the data, most don't. Some have it on their council website as a PDF. <a href="https://opendata.camden.gov.uk" target="_blank" rel="noopener">Camden</a> is the only one with a proper public API, and even Camden's data wasn't fully on <a href="https://www.openstreetmap.org" target="_blank" rel="noopener">OpenStreetMap</a> when I started. So I went borough by borough, cross-referencing whatever each council had against what was on OSM and adding what was missing. The <a href="https://www.openstreetmap.org/user/Parkmoto/history" target="_blank" rel="noopener">contributions history is public</a> if you want to see it: more than 300 spots so far, spread across boroughs, with <a href="https://www.gov.uk/make-a-freedom-of-information-request" target="_blank" rel="noopener">Freedom of Information</a> requests still in flight to the councils that don't publish at all. The numbers will jump when those come back.
+        </p>
+
+        <p>
+          That was the moment I understood what I was actually building. Not a map. A bridge between official records that nobody talks to each other and a public dataset that everyone can use.
+        </p>
+
+        <h2>The choice I almost got wrong</h2>
+
+        <p>
+          Early on I started thinking about ParkMoto as a business. There are already paid apps that do something like this. Subscriptions, accounts, ad models, it all looked tractable. I had a spreadsheet of pricing tiers open for about an afternoon before I closed it.
+        </p>
+
+        <p>
+          The thing I'd been frustrated by, sitting on the bike at a red light fumbling through three apps, was that this information was gated. Some of it behind logins, some behind paywalls, some behind out-of-date council pages. If I built another paid app I'd be doing exactly the thing I'd built it to escape. So I made it free, no accounts, no tracking, and pushed every correction back to OpenStreetMap. The data improvements help every other app and every other rider, not just the ones using ParkMoto.
+        </p>
+
+        <p>
+          The trade-off is that the map is sometimes slow, because OSM tile servers are donated infrastructure and they have rate limits. I think that's a fair price.
+        </p>
+
+        <h2>What I'd say to another rider</h2>
+
+        <p>
+          Finding a bay shouldn't be a research project. ParkMoto puts every motorbike parking spot in London on one map, with the borough fee rules layered on top, and you don't have to register or install anything to use it. It might be slow some days because it's running on free tiles, but it's accurate and it's free, and if you spot a bay that's missing or wrong you can fix it in three taps.
+        </p>
+
+        <p>
+          The folk knowledge in your head is real and useful. ParkMoto is where it can live where everyone can read it.
+        </p>
+
+      </div>
+
+      <p class="writing-byline reveal d3">
+        <em>ABS Astreon</em>
+        <span class="sep"></span>
+        <span>London · MMXXVI</span>
+      </p>
+
+      <a class="writing-backlink reveal d3" href="../projects/parkmoto.html">
+        <span class="meta">
+          <span class="label">Read the project record</span>
+          <span class="title">Park<em>Moto</em> · N° 03</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+
+    </article>
+  </main>
+
+  <div class="footer-rule">
+    <span>© MMXXVI · ABS Astreon</span>
+    <span>Last updated · April MMXXVI</span>
+    <span>Made in London · v1.3</span>
+  </div>
+</body>
+</html>
