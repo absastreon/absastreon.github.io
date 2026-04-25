@@ -11,6 +11,8 @@
   <meta property="og:description" content="Build notes on a flashcard app that lives in the MacBook notch." />
   <meta property="og:type" content="article" />
 
+  <link rel="canonical" href="https://absastreon.github.io/writing/how-i-built-notchwise.html" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -60,7 +62,7 @@
 
       <div class="writing-prose reveal d3">
         <p>
-          I've been using Anki for years and it was great for learning things, except for one problem. Every time I opened it to do a quick session, I'd lose twenty minutes to the app itself. The cards, yes, but also the settings, the deck browser, the urge to reorganise my tags. By the time I closed it, I'd forgotten what I was working on before.
+          I've been using <a href="https://apps.ankiweb.net" target="_blank" rel="noopener">Anki</a> for years and it was great for learning things, except for one problem. Every time I opened it to do a quick session, I'd lose twenty minutes to the app itself. The cards, yes, but also the settings, the deck browser, the urge to reorganise my tags. By the time I closed it, I'd forgotten what I was working on before.
         </p>
         <p>
           That's the loop I wanted to break. Not to replace Anki, which is genuinely good, but to make studying something that happened around my work instead of pulling me out of it.
@@ -84,18 +86,21 @@
 
         <h2>The boring parts mattered most</h2>
         <p>
-          A good chunk of the work went into things nobody sees. NotchWise runs entirely offline. No accounts, no cloud sync, no telemetry. Your data sits in a SQLite file on your Mac and that's it. It imports your existing Anki decks, both <code>.apkg</code> files and live <code>AnkiConnect</code> sessions, so you can switch without losing a single card. You can pick between <code>SM-2</code>, which Anki uses by default, and <code>FSRS</code>, the newer scheduler that's better at predicting what you'll actually remember.
+          A good chunk of the work went into things nobody sees. NotchWise runs entirely offline. No accounts, no cloud sync, no telemetry. Your data sits in a SQLite file on your Mac and that's it. It imports your existing Anki decks, both <code>.apkg</code> files and live <a href="https://github.com/FooSoft/anki-connect" target="_blank" rel="noopener"><code>AnkiConnect</code></a> sessions, so you can switch without losing a single card. You can pick between <code>SM-2</code>, which Anki uses by default, and <a href="https://github.com/open-spaced-repetition/fsrs4anki" target="_blank" rel="noopener"><code>FSRS</code></a>, the newer scheduler that's better at predicting what you'll actually remember.
         </p>
         <p>
-          The auto-hide logic was the thing I got most wrong the first few times. I shipped a build where cards kept appearing during screen shares. That afternoon I rewrote it to watch for ScreenCaptureKit sessions, Focus modes, and full-screen presentations. A flashcard about anatomy showing up in a Zoom call is the kind of moment you don't come back from.
+          The auto-hide logic was the thing I got most wrong the first few times. I shipped a build where cards kept appearing during screen shares. That afternoon I rewrote it to watch for <a href="https://developer.apple.com/documentation/screencapturekit" target="_blank" rel="noopener">ScreenCaptureKit</a> sessions, Focus modes, and full-screen presentations. A flashcard about anatomy showing up in a Zoom call is the kind of moment you don't come back from.
         </p>
 
-        <h2>What's next</h2>
+        <h2>What I didn't see coming</h2>
         <p>
-          I'm working on a version that makes cards from whatever text you drag in, using Apple's NaturalLanguage framework so nothing leaves the machine. It'll suggest a front and back from a paragraph, or generate cloze deletions. Still local, still offline, still something you can use while doing something else.
+          I'm working on a version that makes cards from whatever text you drag in, using Apple's <a href="https://developer.apple.com/documentation/naturallanguage" target="_blank" rel="noopener">NaturalLanguage framework</a> so nothing leaves the machine. That part I expected to be hard. What I didn't expect was that I'd still be tweaking the scheduler weights every few weeks, months after launch.
         </p>
         <p>
-          NotchWise is on the Mac App Store, and there's a demo you can try in a browser. If you've already got an Anki library, it takes about a minute to get going.
+          Not because they're wrong. Because the line between a useful interruption and an annoying one is narrower than I thought, and it moves depending on what I'm working on. A card during a focused coding block is unwelcome. The same card during a half-finished email is fine. The system has to read context I haven't fully given it yet.
+        </p>
+        <p>
+          That's the part I'm still figuring out. NotchWise is on the <a href="https://apps.apple.com/app/notchwise/id6760242442" target="_blank" rel="noopener">Mac App Store</a> if you want to try it, and there's a demo in the browser. Either way, I'd be curious to hear how the timing feels for you.
         </p>
       </div>
 
@@ -117,7 +122,8 @@
 
   <div class="footer-rule">
     <span>© MMXXVI · ABS Astreon</span>
-    <span>Made in London · v1.1</span>
+    <span>Last updated · April MMXXVI</span>
+    <span>Made in London · v1.2</span>
   </div>
 </body>
 </html>
