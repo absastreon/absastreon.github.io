@@ -8,6 +8,14 @@
     <atom:link href="https://absastreon.github.io/writing/rss.xml" rel="self" type="application/rss+xml" />
 
     <item>
+      <title>Starting on two wheels</title>
+      <link>https://absastreon.github.io/writing/starting-on-two-wheels.html</link>
+      <guid isPermaLink="true">https://absastreon.github.io/writing/starting-on-two-wheels.html</guid>
+      <pubDate>Sat, 25 Apr 2026 19:00:00 +0000</pubDate>
+      <description>The gear I bought, the gear I'm still buying, and a few things I'd tell myself before my first lesson.</description>
+    </item>
+
+    <item>
       <title>How I built Lovable-Eject</title>
       <link>https://absastreon.github.io/writing/how-i-built-lovable-eject.html</link>
       <guid isPermaLink="true">https://absastreon.github.io/writing/how-i-built-lovable-eject.html</guid>
