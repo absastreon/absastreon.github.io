@@ -8,6 +8,14 @@
     <atom:link href="https://absastreon.github.io/writing/rss.xml" rel="self" type="application/rss+xml" />
 
     <item>
+      <title>How I built Lovable-Eject</title>
+      <link>https://absastreon.github.io/writing/how-i-built-lovable-eject.html</link>
+      <guid isPermaLink="true">https://absastreon.github.io/writing/how-i-built-lovable-eject.html</guid>
+      <pubDate>Fri, 25 Apr 2026 09:00:00 +0000</pubDate>
+      <description>Lovable's export gives you back code, not a deployable project. Why I built the missing afternoon as one command, and why it's npx-only.</description>
+    </item>
+
+    <item>
       <title>How I built ParkMoto</title>
       <link>https://absastreon.github.io/writing/how-i-built-parkmoto.html</link>
       <guid isPermaLink="true">https://absastreon.github.io/writing/how-i-built-parkmoto.html</guid>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uses · ABS Astreon</title>
+  <meta name="description" content="The tools, languages, and services I actually use to build and ship things." />
+  <meta name="theme-color" content="#f1ebdd" />
+
+  <meta property="og:title" content="Uses · ABS Astreon" />
+  <meta property="og:description" content="The tools, languages, and services I actually use to build and ship things." />
+  <meta property="og:type" content="website" />
+
+  <link rel="canonical" href="https://absastreon.github.io/uses.html" />
+  <link rel="alternate" type="application/rss+xml" title="ABS Astreon · Writing" href="writing/rss.xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="shell site-header">
+    <div class="wordmark reveal d1">
+      <a href="index.html">ABS <span>·</span> ASTREON</a>
+    </div>
+    <nav class="site-nav reveal d2">
+      <a href="index.html#works">Works</a>
+      <a href="index.html#workshop">Workshop</a>
+      <a href="writing/index.html">Writing</a>
+      <a href="about.html">About</a>
+      <a href="uses.html">Uses</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="shell">
+    <a href="index.html" class="back-link reveal d1">
+      <span class="arrow">←</span> Back to index
+    </a>
+
+    <section class="detail-header reveal d2">
+      <p class="detail-meta">
+        <span>MMXXVI</span>
+        <span class="sep"></span>
+        <span>What I actually build with</span>
+      </p>
+      <h1 class="detail-title"><em>Uses</em></h1>
+      <p class="detail-tagline">An honest list of tools and services that produced the work on this site. Updated when something changes, not on a schedule.</p>
+    </section>
+
+    <section class="detail-body">
+      <div>
+        <p class="detail-section-label">Languages &amp; runtimes</p>
+      </div>
+      <div class="detail-prose">
+        <p>
+          I work mostly in two stacks. <strong>Swift and SwiftUI</strong> for native macOS, with AppKit where SwiftUI still has gaps. Background work talks to <code>SQLite</code> directly. <strong>TypeScript on Node.js</strong> for everything web and CLI. Both stacks share a preference for keeping things compiled, typed, and small.
+        </p>
+        <p>
+          For ParkMoto specifically the front-end is plain JavaScript with <a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a> for the map, the Geolocation API for "where am I", and a Service Worker so the whole thing runs as a PWA when you add it to your home screen.
+        </p>
+      </div>
+    </section>
+
+    <section class="detail-body">
+      <div>
+        <p class="detail-section-label">Editor &amp; AI</p>
+      </div>
+      <div class="detail-prose">
+        <p>
+          <strong>Cursor</strong> for most code work. <strong>Xcode</strong> for native macOS, because the alternative is fighting the toolchain. I use <strong>Claude</strong> as the primary thinking partner: planning, drafting, debugging, the occasional rubber-duck session at 2am.
+        </p>
+        <p>
+          What I don't do: I don't let an AI agent push code without me reading it. I don't auto-accept suggestions in long files. The boundary I keep is that the commit message has to make sense to me when I read it back six months later.
+        </p>
+      </div>
+    </section>
+
+    <section class="detail-body">
+      <div>
+        <p class="detail-section-label">Hosting &amp; services</p>
+      </div>
+      <div class="detail-prose">
+        <p>
+          Static sites on <strong>GitHub Pages</strong> when there's no backend (this site, ParkMoto's marketing pages). <strong>Vercel</strong> when there is. Source on <strong>GitHub</strong>, mirrored where useful to my <a href="https://github.com/ABS-Projects-2026" target="_blank" rel="noopener">projects organisation</a>.
+        </p>
+        <p>
+          Maps come from <a href="https://www.openstreetmap.org" target="_blank" rel="noopener">OpenStreetMap</a>. Payments through <strong>Lemon Squeezy</strong> for digital products (Bastion Pro). Domains through Namecheap. Email on Gmail because it works.
+        </p>
+      </div>
+    </section>
+
+    <section class="detail-body">
+      <div>
+        <p class="detail-section-label">By project</p>
+      </div>
+      <div class="detail-prose">
+        <p style="color: var(--ink-mute); font-size: 0.95rem; line-height: 1.55;">
+          The actual stack pills lifted from each project page, so this stays accurate when the project pages do.
+        </p>
+
+        <div style="margin-top: 1.75rem;">
+          <p class="detail-section-label" style="margin-top: 0; font-size: 0.66rem;">N° 01 · NotchWise</p>
+          <div class="project-stack" style="gap: 0.6rem;">
+            <span>Swift</span>
+            <span>SwiftUI</span>
+            <span>AppKit</span>
+            <span>SQLite</span>
+            <span>FSRS</span>
+            <span>SM-2</span>
+            <span>NaturalLanguage</span>
+            <span>macOS 14+</span>
+            <span>MCP</span>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.75rem;">
+          <p class="detail-section-label" style="margin-top: 0; font-size: 0.66rem;">N° 02 · Bastion</p>
+          <div class="project-stack" style="gap: 0.6rem;">
+            <span>Node.js</span>
+            <span>TypeScript</span>
+            <span>CLI</span>
+            <span>OWASP</span>
+            <span>MIT License</span>
+            <span>npm provenance</span>
+            <span>759 tests</span>
+            <span>Lemon Squeezy</span>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.75rem;">
+          <p class="detail-section-label" style="margin-top: 0; font-size: 0.66rem;">N° 03 · ParkMoto</p>
+          <div class="project-stack" style="gap: 0.6rem;">
+            <span>JavaScript</span>
+            <span>OpenStreetMap</span>
+            <span>Leaflet</span>
+            <span>Geolocation API</span>
+            <span>Service Worker</span>
+            <span>PWA</span>
+            <span>TfL Data</span>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.75rem;">
+          <p class="detail-section-label" style="margin-top: 0; font-size: 0.66rem;">N° 04 · Lovable-Eject</p>
+          <div class="project-stack" style="gap: 0.6rem;">
+            <span>Node.js</span>
+            <span>CLI</span>
+            <span>npm / npx</span>
+            <span>Vercel</span>
+            <span>Free</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="detail-body">
+      <div>
+        <p class="detail-section-label">This site</p>
+      </div>
+      <div class="detail-prose">
+        <p>
+          Hand-written HTML, no build step, no framework. <strong>Fraunces</strong> by Undercase Type for display, <strong>JetBrains Mono</strong> for code and metadata, both via Google Fonts. SVG cover plates per project, drawn in Figma. Click-to-copy on CLI boxes is about thirty lines of vanilla JavaScript. The whole thing is in <a href="https://github.com/absastreon/absastreon.github.io" target="_blank" rel="noopener">one repo</a> if you want to look at how it's put together.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="footer-rule">
+    <span>© MMXXVI · ABS Astreon</span>
+    <span>Last updated · April MMXXVI</span>
+    <span>Made in London · v1.5</span>
+  </div>
+</body>
+</html>

@@ -32,6 +32,8 @@
       <a href="../index.html#works">Works</a>
       <a href="../index.html#workshop">Workshop</a>
       <a href="index.html">Writing</a>
+      <a href="../about.html">About</a>
+      <a href="../uses.html">Uses</a>
       <a href="../index.html#contact">Contact</a>
     </nav>
   </header>
@@ -60,6 +62,11 @@
         </p>
       </header>
 
+      <aside class="writing-deck reveal d3">
+        <span class="writing-deck-label">In brief</span>
+        <p>Building a free London bike parking map turned out to be 10% map and 90% data archaeology across 32 boroughs. Here's why I almost made the wrong choice early on, and what FOI requests are still uncovering.</p>
+      </aside>
+
       <div class="writing-prose reveal d3">
 
         <p>
@@ -80,6 +87,14 @@
           That was the moment I understood what I was actually building. Not a map. A bridge between official records that nobody talks to each other and a public dataset that everyone can use.
         </p>
 
+        <figure class="writing-figure">
+          <img src="../assets/writing/parkmoto-map.jpg" alt="ParkMoto's main map view, central London, showing motorcycle parking bays clustered across boroughs with a counter showing 472 bays, 283 free, 2685 spaces" width="1600" height="1038" loading="lazy">
+          <figcaption>
+            <span class="figure-num">Fig 01</span>
+            <span class="figure-text">The map. Every bay I've found, on one screen.</span>
+          </figcaption>
+        </figure>
+
         <h2>The choice I almost got wrong</h2>
 
         <p>
@@ -94,7 +109,23 @@
           The trade-off is that the map is sometimes slow, because OSM tile servers are donated infrastructure and they have rate limits. I think that's a fair price.
         </p>
 
+        <figure class="writing-figure">
+          <img src="../assets/writing/parkmoto-pricing.png" alt="A bay tap-state in ParkMoto showing Westminster borough rules: £1/day plus 25p admin via RingGo, free evenings and Sundays, free for electric motorcycles, with bay size, security, fee, capacity, and access details" width="654" height="1142" loading="lazy" style="max-width: 420px;">
+          <figcaption>
+            <span class="figure-num">Fig 02</span>
+            <span class="figure-text">Tap a bay, get the borough rules layered on top.</span>
+          </figcaption>
+        </figure>
+
         <h2>What I'd say to another rider</h2>
+
+        <figure class="writing-figure">
+          <img src="../assets/writing/parkmoto-navigation.jpg" alt="The full ParkMoto app showing a bay popup with navigation buttons: Pay via RingGo, Google Maps, Waze, Street View, and OpenStreetMap, alongside the surrounding map" width="1600" height="1038" loading="lazy">
+          <figcaption>
+            <span class="figure-num">Fig 03</span>
+            <span class="figure-text">One tap to pay, navigate, or check the OSM source. Designed for gloves on at a red light.</span>
+          </figcaption>
+        </figure>
 
         <p>
           Finding a bay shouldn't be a research project. ParkMoto puts every motorbike parking spot in London on one map, with the borough fee rules layered on top, and you don't have to register or install anything to use it. It might be slow some days because it's running on free tiles, but it's accurate and it's free, and if you spot a bay that's missing or wrong you can fix it in three taps.
@@ -126,7 +157,7 @@
   <div class="footer-rule">
     <span>© MMXXVI · ABS Astreon</span>
     <span>Last updated · April MMXXVI</span>
-    <span>Made in London · v1.3</span>
+    <span>Made in London · v1.5</span>
   </div>
 </body>
 </html>

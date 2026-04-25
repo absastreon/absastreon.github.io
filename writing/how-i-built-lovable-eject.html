@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How I built Lovable-Eject · ABS Astreon</title>
+  <meta name="description" content="Lovable's export gives you back code, not a deployable project. Lovable-Eject is the missing afternoon, in one command." />
+  <meta name="theme-color" content="#f1ebdd" />
+
+  <meta property="og:title" content="How I built Lovable-Eject · ABS Astreon" />
+  <meta property="og:description" content="Build notes on a small CLI for ejecting projects from Lovable." />
+  <meta property="og:type" content="article" />
+
+  <link rel="canonical" href="https://absastreon.github.io/writing/how-i-built-lovable-eject.html" />
+  <link rel="alternate" type="application/rss+xml" title="ABS Astreon · Writing" href="rss.xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+  <header class="shell site-header">
+    <div class="wordmark reveal d1">
+      <a href="../index.html">ABS <span>·</span> ASTREON</a>
+    </div>
+    <nav class="site-nav reveal d2">
+      <a href="../index.html#works">Works</a>
+      <a href="../index.html#workshop">Workshop</a>
+      <a href="index.html">Writing</a>
+      <a href="../about.html">About</a>
+      <a href="../uses.html">Uses</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="shell-narrow">
+    <a href="index.html" class="back-link reveal d1">
+      <span class="arrow">←</span> Back to writing
+    </a>
+
+    <article class="writing-article">
+      <header class="writing-article-header reveal d2">
+        <p class="writing-article-kicker">
+          <span class="num">04</span>
+          <span class="sep"></span>
+          <span>Build notes</span>
+          <span class="sep"></span>
+          <span>Lovable-Eject</span>
+        </p>
+        <h1 class="writing-article-title">How I built Lovable-<em>Eject</em></h1>
+        <p class="writing-article-dateline">
+          <span>April · MMXXVI</span>
+          <span class="sep"></span>
+          <span>3 min read</span>
+          <span class="sep"></span>
+          <span>by ABS Astreon</span>
+        </p>
+      </header>
+
+      <aside class="writing-deck reveal d3">
+        <span class="writing-deck-label">In brief</span>
+        <p>Lovable's export gives you back code, not a deployable project. Lovable-Eject is the missing afternoon, in one command. Build it once, run it with npx, never install.</p>
+      </aside>
+
+      <div class="writing-prose reveal d3">
+
+        <p>
+          I wrote Lovable-Eject the third time I had to spend an afternoon hand-editing config files to get a Lovable project hosted somewhere that wasn't Lovable. After that, I had a small enough script that I figured I'd just publish it.
+        </p>
+
+        <p>
+          <a href="https://lovable.dev" target="_blank" rel="noopener">Lovable</a> is a nice prototyping tool. Once you've got a project with real users or a custom domain, the hosting starts to feel like a fence. You can export the code, but what comes out the other side isn't quite a project. There are leftover config files referencing services you no longer use. There are import paths assuming a runtime specific to their hosting. There's a <code>package.json</code> shaped slightly wrong for any other host's expectations. None of it is hard to fix. All of it is annoying.
+        </p>
+
+        <h2>What it <em>actually</em> does</h2>
+
+        <p>
+          You run <code>npx lovable-eject</code> in your exported project. The script removes the Lovable-specific config, normalises the project structure, preserves your environment variables (and writes a <code>.env.example</code> for collaborators), and gives you back something you can <code>git push</code> to <a href="https://vercel.com" target="_blank" rel="noopener">Vercel</a>, <a href="https://www.netlify.com" target="_blank" rel="noopener">Netlify</a>, Cloudflare Pages, Railway, or any Node host. Roughly thirty seconds of work instead of an afternoon.
+        </p>
+
+        <figure class="writing-figure">
+          <!-- Replace with: <img src="../assets/writing/lovable-eject-terminal.png" alt="Terminal output showing npx lovable-eject in action, transforming a Lovable project"> -->
+          <div class="figure-placeholder" aria-hidden="true">
+            <span class="figure-placeholder-label">Screenshot pending</span>
+            <span class="figure-placeholder-detail">Terminal mid-eject, or just-finished, showing the output</span>
+            <span class="figure-placeholder-target">assets/writing/lovable-eject-terminal.png</span>
+          </div>
+          <figcaption>
+            <span class="figure-num">Fig 01</span>
+            <span class="figure-text">Eject in progress. Thirty seconds, not an afternoon.</span>
+          </figcaption>
+        </figure>
+
+        <h2>Why npx, no install</h2>
+
+        <p>
+          I made it <code>npx</code>-only deliberately. You only need this tool once or twice in the life of a project. Eject, host, done. A global install is overhead for that. Locking it into a <code>package.json</code> dev dependency is worse, because then it sits in your <code>node_modules</code> forever for a job you finished in an hour. <code>npx</code> runs it once, writes nothing to disk that you'll trip over later, and gets out of the way.
+        </p>
+
+        <p>
+          That's also why I didn't add a config file. There was an early version with a <code>.lovable-eject.json</code> for opting out of certain transforms. I deleted it before shipping. The whole tool is supposed to be a one-shot. Adding configuration meant readers needed to understand the configuration before they could run it. The version without configuration runs in thirty seconds with one command, and the version with configuration would run in thirty seconds plus however long it takes to read the docs.
+        </p>
+
+        <h2>What I'd say to someone with a stuck Lovable project</h2>
+
+        <p>
+          You're not actually stuck. The code is yours. <code>npx lovable-eject</code> does the boring conversion in a single command. Whatever host you'd rather use, the project will work there afterwards. If something doesn't, <a href="https://github.com/absastreon/lovable-eject/issues" target="_blank" rel="noopener">file an issue</a> and I'll patch it.
+        </p>
+
+        <p>
+          I built it because I needed it. Put it out because other people probably do too.
+        </p>
+
+      </div>
+
+      <p class="writing-byline reveal d3">
+        <em>ABS Astreon</em>
+        <span class="sep"></span>
+        <span>London · MMXXVI</span>
+      </p>
+
+      <a class="writing-backlink reveal d3" href="../projects/lovable-eject.html">
+        <span class="meta">
+          <span class="label">Read the project record</span>
+          <span class="title">Lovable-<em>Eject</em> · N° 04</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+
+    </article>
+  </main>
+
+  <div class="footer-rule">
+    <span>© MMXXVI · ABS Astreon</span>
+    <span>Last updated · April MMXXVI</span>
+    <span>Made in London · v1.5</span>
+  </div>
+</body>
+</html>

@@ -1465,3 +1465,144 @@ button:focus-visible,
    would dilute the editorial aesthetic with a default invert.
    Neither is worth doing right now. If a dark theme is added
    later, it should be designed from scratch, not derived. */
+
+/* ═══════════════════════════════════════════════════════════
+   Writing · v1.4 additions
+   In brief blocks (magazine-style standfirst) and figures
+   with caption typography + screenshot-pending placeholders.
+   ═══════════════════════════════════════════════════════════ */
+
+/* ——— In brief / standfirst ——————————————————————————————
+   Sits between dateline and prose. Italic Fraunces, larger
+   than body, accent border on the left, very subtle warm
+   background. Frames the post without spoiling it. */
+.writing-deck {
+  font-family: var(--serif);
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+  font-size: 1.18rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 60ch;
+  margin: 2.25rem 0 3rem;
+  padding: 1.4rem 1.6rem 1.5rem;
+  border-left: 2px solid var(--accent);
+  background: rgba(166, 66, 28, 0.04);
+}
+.writing-deck-label {
+  display: block;
+  font-family: var(--mono);
+  font-style: normal;
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  font-weight: 500;
+  margin-bottom: 0.65rem;
+}
+.writing-deck p {
+  font-size: inherit !important;
+  line-height: inherit !important;
+  color: inherit !important;
+  margin: 0 !important;
+}
+.writing-deck p:first-of-type::first-letter {
+  font-family: inherit !important;
+  float: none !important;
+  font-size: inherit !important;
+  padding: 0 !important;
+  color: inherit !important;
+  line-height: inherit !important;
+}
+
+/* ——— Figures ———————————————————————————————————————————
+   Constrained to article measure. Image with thin border
+   echoing the project-page detail-cover treatment, then a
+   mono caption with a serif italic figure number. */
+.writing-figure {
+  margin: 2.75rem 0;
+  max-width: 65ch;
+}
+.writing-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--rule);
+  background: var(--paper-warm);
+}
+.writing-figure figcaption {
+  margin-top: 0.85rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  align-items: baseline;
+}
+.writing-figure figcaption .figure-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--accent);
+  text-transform: none;
+  letter-spacing: -0.01em;
+}
+.writing-figure figcaption .figure-text {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ——— Screenshot-pending placeholder ——————————————————————
+   When the actual screenshot hasn't been captured yet, this
+   block sits in the figure's spot. Looks intentional rather
+   than broken. Replace the placeholder div with an <img> when
+   the screenshot is ready. */
+.figure-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  text-align: center;
+  padding: 4rem 1.5rem;
+  border: 1px dashed var(--rule);
+  background: var(--paper-warm);
+  min-height: 240px;
+  position: relative;
+}
+.figure-placeholder::before {
+  content: "✎";
+  font-size: 1.5rem;
+  color: var(--ink-mute);
+  opacity: 0.5;
+  margin-bottom: 0.4rem;
+}
+.figure-placeholder-label {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  font-weight: 500;
+}
+.figure-placeholder-detail {
+  font-family: var(--serif);
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  max-width: 36ch;
+  line-height: 1.4;
+}
+.figure-placeholder-target {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--ink-mute);
+  opacity: 0.55;
+  margin-top: 0.4rem;
+}

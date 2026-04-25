@@ -43,6 +43,8 @@
       <a href="../index.html#works">Works</a>
       <a href="../index.html#workshop">Workshop</a>
       <a href="index.html">Writing</a>
+      <a href="../about.html">About</a>
+      <a href="../uses.html">Uses</a>
       <a href="../index.html#contact">Contact</a>
     </nav>
   </header>
@@ -71,6 +73,11 @@
         </p>
       </header>
 
+      <aside class="writing-deck reveal d3">
+        <span class="writing-deck-label">In brief</span>
+        <p>Pro-grade security tooling starts at £300 a month, which excludes the developers most exposed to AI-generated vulnerabilities. Bastion is what fits between zero and that. The product insight isn't the scan, it's what comes out of it.</p>
+      </aside>
+
       <div class="writing-prose reveal d3">
 
         <p>
@@ -80,6 +87,19 @@
         <p>
           Bastion is what fits between those two states. It's a security scanner that runs on your own machine in a few seconds. It's free. It's MIT licensed. And it changes the deliverable.
         </p>
+
+        <figure class="writing-figure">
+          <!-- Replace with: <img src="../assets/writing/bastion-cli.png" alt="The Bastion CLI invocation, npx bastion-scan scan, in a clean terminal"> -->
+          <div class="figure-placeholder" aria-hidden="true">
+            <span class="figure-placeholder-label">Screenshot pending</span>
+            <span class="figure-placeholder-detail">The CLI invocation. One command, no install.</span>
+            <span class="figure-placeholder-target">assets/writing/bastion-cli.png</span>
+          </div>
+          <figcaption>
+            <span class="figure-num">Fig 01</span>
+            <span class="figure-text">One command. No account, no upload, no SaaS.</span>
+          </figcaption>
+        </figure>
 
         <h2>The 40% problem nobody is <em>pricing</em> for</h2>
 
@@ -101,11 +121,37 @@
           The problem is the gap between "you have a CORS misconfiguration on your API route" and "here is the corrected middleware for your specific stack". The report stops at the first line. The fix lives in the second. Bridging that gap, for one developer with twelve issues across three frameworks, takes hours of context-switching that nobody factored into the pricing.
         </p>
 
+        <figure class="writing-figure">
+          <!-- Replace with: <img src="../assets/writing/bastion-scan.png" alt="Bastion scan output showing detected issues and severity levels"> -->
+          <div class="figure-placeholder" aria-hidden="true">
+            <span class="figure-placeholder-label">Screenshot pending</span>
+            <span class="figure-placeholder-detail">A scan in progress, or just finished, with findings</span>
+            <span class="figure-placeholder-target">assets/writing/bastion-scan.png</span>
+          </div>
+          <figcaption>
+            <span class="figure-num">Fig 02</span>
+            <span class="figure-text">A scan over a real project, mid-run.</span>
+          </figcaption>
+        </figure>
+
         <h2>Making the prompt the deliverable</h2>
 
         <p>
           The thing Bastion changes is what comes out the other end. Instead of a finding, it gives you a fix prompt: a piece of text written for whatever stack the issue is in, ready to paste into Claude or ChatGPT. The LLM does the part that used to take an hour. You read the diff, push it, move on.
         </p>
+
+        <figure class="writing-figure">
+          <!-- Replace with: <img src="../assets/writing/bastion-prompt.png" alt="A Bastion fix prompt expanded, ready to paste into an LLM"> -->
+          <div class="figure-placeholder" aria-hidden="true">
+            <span class="figure-placeholder-label">Screenshot pending</span>
+            <span class="figure-placeholder-detail">A fix prompt expanded, paste-ready text for an LLM</span>
+            <span class="figure-placeholder-target">assets/writing/bastion-prompt.png</span>
+          </div>
+          <figcaption>
+            <span class="figure-num">Fig 03</span>
+            <span class="figure-text">The fix prompt. The whole product is built around making this useful.</span>
+          </figcaption>
+        </figure>
 
         <p>
           That's not a feature. It's the product. Every other check in the system was designed around it. The <code>.gitignore</code> auditor doesn't just flag a leaked <code>.env</code>, it generates the rotation prompt with the right key prefix. The CORS check doesn't just say "wildcard with credentials is dangerous", it gives you the corrected Express or Fastify middleware. <code>npm audit</code> integration doesn't stop at "you have CVE-2024-XXXXX", it tells the LLM the version constraint to honour. The whole tool is a prompt-generating machine that happens to do scanning on the way there.
@@ -153,7 +199,7 @@
   <div class="footer-rule">
     <span>© MMXXVI · ABS Astreon</span>
     <span>Last updated · April MMXXVI</span>
-    <span>Made in London · v1.3</span>
+    <span>Made in London · v1.5</span>
   </div>
 </body>
 </html>
