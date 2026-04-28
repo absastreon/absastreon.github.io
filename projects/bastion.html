@@ -71,10 +71,10 @@
           A lot of code being shipped right now is written with AI help, and a lot of it has basic security problems. Hardcoded API keys, missing headers, CORS policies that are wide open. Stanford research says AI-generated code has roughly <strong>40% more vulnerabilities</strong> than code written by hand. The tools that catch this kind of thing start at £300 a month, which rules out most indie developers and small teams.
         </p>
         <p>
-          Bastion is what I wanted to exist. You run <code>npx bastion-scan</code>, it checks your project for the twelve most common problems in a few seconds, and it writes a fix prompt for each one. Paste that prompt into Claude or ChatGPT and you can ship the fix the same afternoon.
+          Bastion is what I wanted to exist. You run <code>npx bastion-scan</code>, it checks your project across fifteen common security gaps in a few seconds, and writes a fix prompt for each one. Paste that prompt into Claude or ChatGPT and you can ship the fix the same afternoon.
         </p>
         <p>
-          It's MIT licensed and open source. Nothing uploads anywhere, no accounts, nothing leaves your machine. It scans itself at 100 out of 100, has 759 tests, and ships with npm provenance. There's a Pro tier that adds more checks and a dashboard, but the scanner itself is free and will stay that way.
+          It's MIT licensed and open source. Nothing uploads anywhere, no accounts, nothing leaves your machine. It scans itself at 100 out of 100, has 780 tests, and ships with npm provenance. There's a Pro tier that adds more checks and a dashboard, but the scanner itself is free and will stay that way.
         </p>
 
         <div class="cli-box" data-copy="npx bastion-scan scan">
@@ -94,7 +94,7 @@
             <span class="feature-num">C.01</span>
             <div>
               <h4>Config and secrets</h4>
-              <p>Checks your <code>.gitignore</code>, validates your <code>.env.example</code>, and finds hardcoded API keys for OpenAI, AWS, Stripe, and others before they end up in your repo.</p>
+              <p>Checks your <code>.gitignore</code>, validates your <code>.env.example</code>, and finds hardcoded API keys across fifteen patterns: OpenAI (legacy and project), Anthropic, GitHub tokens, AWS, Stripe, Google, Slack, and more, before they end up in your repo.</p>
             </div>
           </div>
           <div class="feature">
@@ -141,7 +141,7 @@
           <span>OWASP</span>
           <span>MIT License</span>
           <span>npm provenance</span>
-          <span>759 tests</span>
+          <span>780 tests</span>
           <span>Lemon Squeezy</span>
         </div>
       </div>
