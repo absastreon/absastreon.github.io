@@ -68,13 +68,13 @@
       </div>
       <div class="detail-prose">
         <p>
-          A lot of code being shipped right now is written with AI help, and a lot of it has basic security problems. Hardcoded API keys, missing headers, CORS policies that are wide open. Stanford research says AI-generated code has roughly <strong>40% more vulnerabilities</strong> than code written by hand. The tools that catch this kind of thing start at £300 a month, which rules out most indie developers and small teams.
+          A lot of code being shipped right now is written with AI help, and a lot of it has basic security problems. Hardcoded API keys, missing headers, CORS policies that are wide open. Two pieces of research underline the scale of the problem. A 2021 NYU study (<a href="https://arxiv.org/abs/2108.09293" target="_blank" rel="noopener">Pearce et al.</a>) found roughly 40% of GitHub Copilot completions in security-sensitive contexts contained vulnerabilities. A 2022 Stanford study (<a href="https://arxiv.org/abs/2211.03622" target="_blank" rel="noopener">Perry et al.</a>) found that developers using AI assistants wrote significantly less secure code, and were more likely to believe it was secure. The tools that catch this kind of thing start at £300 a month, which rules out most indie developers and small teams.
         </p>
         <p>
           Bastion is what I wanted to exist. You run <code>npx bastion-scan</code>, it checks your project across fifteen common security gaps in a few seconds, and writes a fix prompt for each one. Paste that prompt into Claude or ChatGPT and you can ship the fix the same afternoon.
         </p>
         <p>
-          It's MIT licensed and open source. Nothing uploads anywhere, no accounts, nothing leaves your machine. It scans itself at 100 out of 100, has 780 tests, and ships with npm provenance. There's a Pro tier that adds more checks and a dashboard, but the scanner itself is free and will stay that way.
+          It's MIT licensed and open source. Nothing uploads anywhere, no accounts, nothing leaves your machine. It scans itself at 100 out of 100 and ships with npm provenance. There's a Pro tier that adds more checks and a dashboard, but the scanner itself is free and will stay that way.
         </p>
 
         <div class="cli-box" data-copy="npx bastion-scan scan">
@@ -141,7 +141,7 @@
           <span>OWASP</span>
           <span>MIT License</span>
           <span>npm provenance</span>
-          <span>780 tests</span>
+
           <span>Lemon Squeezy</span>
         </div>
       </div>
@@ -214,8 +214,7 @@
 
   <div class="footer-rule">
     <span>© MMXXVI · ABS Astreon</span>
-    <span>Last updated · April MMXXVI</span>
-    <span>Made in London · v1.8</span>
+    <span>Made in London · v1.9</span>
   </div>
 
   <script src="../scripts.js" defer></script>
